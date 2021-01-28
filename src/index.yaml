@@ -1,7 +1,17 @@
-ProjectTitle: Title
+ProjectTitle: SO Logisitics
 
 PageList:
-  - file: homepage.html
+  - file: auth.html
     ready: 20
-  - file: page.html
+  - file: signup.html
+    ready: 0
+  - file: dashboard.html
+    ready: 0
+  - file: supply-1.html
+    ready: 0
+  - file: supply-2.html
+    ready: 0
+  - file: supply-3.html
+    ready: 0
+  - file: supply-4.html
     ready: 0
