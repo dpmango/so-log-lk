@@ -1,6 +1,16 @@
 // SIDEBAR
 .sidebar-global-container
   position: relative
+  z-index: 9
+  position: fixed 0
+  pointer-events: none
+  will-change: opacity
+  background: transparent
+  transition: background .25s $ease, backdrop-filter .25s linear
+  backface-visibility: hidden
+  &.is-active
+    background: rgba(#000, .2)
+    backdrop-filter: blur(4px)
 
 .sidebar
   position: fixed
@@ -13,11 +23,11 @@
   display: flex
   flex-direction: column
   overflow-y: auto
+  pointer-events: all
   &__wrapper
     flex: 1 1 auto
     display: flex
     flex-direction: column
-    position: relative
     padding-top: 90px
   &__menu
     flex: 0 0 auto
@@ -25,6 +35,7 @@
     padding: 0
     display: flex
     flex-direction: column
+    font-size: 16px
     li
       display: block
       margin-bottom: 2px
@@ -66,7 +77,7 @@
 
 
 // sidebar menu (js-sidebar-menu)
-.sidebar-menu
+.s-menu
   position: fixed
   z-index: 9
   top: 0
@@ -76,7 +87,7 @@
   background: $colorBg
   display: flex
   flex-direction: column
-  overflow-y: auto
+  // overflow-y: auto
   opacity: 0
   transform: translate3d(-20px,0,0)
   pointer-events: none
@@ -87,10 +98,10 @@
     pointer-events: all
     transform: translate3d(0,0,0)
   &__wrapper
+    position: relative
     flex: 1 1 auto
     display: flex
     flex-direction: column
-    position: relative
     padding-top: 90px
   &__menu
     flex: 0 0 auto
@@ -98,8 +109,14 @@
     padding: 0
     display: flex
     flex-direction: column
+    font-size: 16px
     li
       display: block
+      &:hover
+        .s-menu__lvl-down
+          opacity: 1
+          pointer-events: all
+          transform: translate3d(0,0,0)
     a
       position: relative
       display: block
@@ -107,20 +124,6 @@
       min-width: 250px
       color: $fontColor
       transition: color .15s $ease, background .15s $ease
-      &::after
-        display: inline-block
-        content: ''
-        background: svg-load('../icons/svg-mono/arrow-right.svg') no-repeat center center
-        background-size: cover
-        size: 8px 12px
-        position: absolute
-        right: 15px
-        top: 50%
-        transform: translate(0, -50%)
-        will-change: opacity
-        pointer-events: none
-        opacity: 0
-        transition: opacity .15s $ease
       &:hover
         color: $colorPrimary
         background: white
@@ -132,3 +135,36 @@
         background: white
         &::after
           opacity: 1
+  &__lvl-down
+    position: absolute
+    z-index: 1
+    left: 250px
+    top: 0
+    bottom: 0
+    margin: 0
+    padding: 120px 0 30px
+    background: white
+    min-height: 100%
+    overflow-y: auto
+    opacity: 0
+    transform: translate3d(0px,-20px,0)
+    pointer-events: none
+    transition: transform .25s $ease, opacity .1s $ease
+    a
+      min-width: 240px
+
+  &__have-ul
+    > a::after
+      display: inline-block
+      content: ''
+      background: svg-load('../icons/svg-mono/arrow-right.svg') no-repeat center center
+      background-size: cover
+      size: 8px 12px
+      position: absolute
+      right: 15px
+      top: 50%
+      transform: translate(0, -50%)
+      will-change: opacity
+      pointer-events: none
+      opacity: 0
+      transition: opacity .15s $ease

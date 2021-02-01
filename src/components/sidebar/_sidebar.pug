@@ -26,20 +26,33 @@
             +svgMono('menu-7')
 
   // sidebar menu
-  .sidebar-menu.js-sidebar-menu
-    .sidebar-menu__wrapper
-      ul.sidebar-menu__menu
-        li(data-index="1").is-active
+  .s-menu.js-sidebar-menu
+    .s-menu__wrapper
+      ul.s-menu__menu
+        li.s-menu__have-ul(data-index="1").is-active
           a(href="#") Поставки
+          ul.s-menu__lvl-down
+            li
+              a(href="#") Текушие поставки
+              a(href="#") Завершённые поставки
         li(data-index="2")
           a(href='#') Заявка на услугу
         li(data-index="3")
           a(href="#") Текущие счета
         li(data-index="4")
           a(href="#") Прайсы на услуги
-        li(data-index="5")
+        li.s-menu__have-ul(data-index="5")
           a(href="#") Финансовые документы
-        li(data-index="6")
+          ul.s-menu__lvl-down
+            li
+              a(href="#") Выставленные счета
+              a(href="#") Платежы контрагентам
+              a(href="#") Отчетность
+        li.s-menu__have-ul(data-index="6")
           a(href="#") Инвойсы поставщиков
+          ul.s-menu__lvl-down
+            li
+              a(href="#") Первичные документы
+              a(href="#") Накладные
         li(data-index="7")
           a(href="#") Склад
