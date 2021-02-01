@@ -1,0 +1,63 @@
+// .supply-scope
+.supply-scope
+  margin-left: -30px
+  margin-right: -30px
+  padding: 20px 30px
+  background: white
+  border-radius: 8px
+  &__wrapper
+    display: flex
+    align-items: center
+    width: 100%
+  &__name
+    padding-right: 10px
+    flex: 0 0 140px
+    max-width: 140px
+    font-weight: 500
+    font-size: 18px
+    line-height: 24px
+  &__progress
+    position: relative
+    flex: 1 1 580px
+    max-width: 580px
+    min-height: 22px
+    &::after
+      position: absolute
+      left: 0
+      right: 0
+      top: 50%
+      height: 5px
+      transform: translateY(-50%)
+      display: inline-block
+      content: ' '
+      background: #E4E4E4
+      border-radius: 10px
+  &__progress-fill
+    position: absolute
+    z-index: 3
+    left: 0
+    right: 0
+    top: 50%
+    height: 5px
+    transform: translateY(-50%)
+    background: #E4ABAB
+    border-radius: 10px
+  &__info
+    flex: 0 0 300px
+    max-width: 300px
+    padding-left: 25px
+    padding-right: 25px
+  &__date
+    font-size: 14px
+    line-height: 18px
+    color: $colorGray
+  &__status
+    font-weight: bold
+    font-size: 14px
+    line-height: 18px
+  &__cta
+    margin-left: auto
+    flex: 0 0 195px
+    max-width: 195px
+    display: flex
+    justify-content: flex-end

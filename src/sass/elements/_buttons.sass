@@ -12,6 +12,7 @@ button
   position: relative
   text-align: center
   cursor: pointer
+  box-shadow: none
   transition: all $transitionSpeed $ease
   &:focus, &:active
     outline: none
@@ -28,7 +29,18 @@ button
     color: white
     padding: 17px 25px
     border-radius: 4px
-    box-shadow: none
-    will-change: box-shadow, transform
     &:hover
       background: $colorPrimary
+
+  &-outline
+    font-weight: 500
+    font-size: 14px
+    line-height: 16px
+    background: transparent
+    color: $colorGray
+    border: 1px solid $colorPrimary
+    padding: 10px 30px
+    border-radius: 4px
+    &:hover
+      background: $colorPrimary
+      color: white

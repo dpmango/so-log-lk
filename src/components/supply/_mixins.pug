@@ -1,0 +1,12 @@
+// mixins
+mixin supplyScope(props)
+  .supply-scope
+    .supply-scope__wrapper
+      .supply-scope__name!= props.name
+      .supply-scope__progress
+        .supply-scope__progress-fill(style="width: "+props.progress+"%")
+      .supply-scope__info
+        span.supply-scope__date!= props.date
+        .supply-scope__status!= props.status
+      .supply-scope__cta
+        a(href="#").btn.btn-outline Информация

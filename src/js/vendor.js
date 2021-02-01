@@ -22,7 +22,6 @@ import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scro
 // uncomment plugins you want to use (from /js/__extras folder)
 
 // import scrollMonitor from 'scrollmonitor';
-// import sharer from 'sharer.js';
 // import ClipboardJS from 'clipboard';
 // import PhotoSwipe from 'photoswipe';
 // // eslint-disable-next-line camelcase
@@ -58,7 +57,6 @@ window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
 
 // window.scrollMonitor = scrollMonitor;
-// window.sharer = sharer;
 // window.ClipboardJS = ClipboardJS;
 // window.PhotoSwipe = PhotoSwipe;
 // // eslint-disable-next-line camelcase
