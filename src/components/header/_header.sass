@@ -4,42 +4,77 @@
   top: 0
   right: 0
   left: 0
-  z-index: 9
-  background: #f5f5f5
+  z-index: 10
+  background: white
   will-change: transform
   backface-visibility: hidden
   transform-style: preserve-3d
   &__wrapper
     display: flex
     align-items: center
-    height: 70px
+    padding: 19px 30px
 
   &__logo
     flex: 0 0 auto
     font-size: 35px
     padding-right: 30px
+    font-size: 0
+    .ico
+      font-size: 52px
 
-  &__menu
-    flex: 0 1 auto
+  &__actions
+    margin-left: auto
     display: flex
     align-items: center
-    font-size: 18px
-    margin: 0 auto
-    padding: 0
-    li
+
+  &__action
+    display: flex
+    align-items: center
+    padding: 5px
+    margin-left: 20px
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimary
+  &__action-icon
+    font-size: 0
+    color: $colorPrimary
+    .ico
+      font-size: 28px
+  &__action-text
+    display: inline-block
+    margin-left: 7px
+    font-size: 16px
+    line-height: 1.5
+
+  &__contacts
+    display: flex
+    align-items: center
+  &__contact
+    position: relative
+    display: flex
+    align-items: center
+    &::after
       display: inline-block
-      margin-right: 30px
+      content: '|'
+      margin-right: 5px
+      margin-left: 5px
+    &:last-child::after
+      display: none
     a
+      display: inline-block
+      padding: 5px
+      color: $colorGray
       transition: color .25s $ease
       &:hover
-        color: tomato
+        color: $colorPrimary
+      &[href^="mailto"]
+        color: $colorPrimary
+        &:hover
+          color: $colorGray
 
-  &__cta
-    margin-left: auto
-    padding-left: 30px
 
   &__hamburger
-    // display: none
+    display: none
     padding-left: 20px
 
   &.is-fixed
@@ -68,8 +103,6 @@
 
 +r($md)
   .header
-    &__menu
-      display: none
     &__hamburger
       margin-left: auto
       display: block
