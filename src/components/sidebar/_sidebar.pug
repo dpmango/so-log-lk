@@ -1,44 +1,45 @@
 // SIDEBAR
-.sidebar
-  .sidebar__wrapper
-    ul.sidebar__menu.js-sidebar-nav
-      li.is-active
-        a(href="#")
-          +svgMono('menu-1')
-      li
-        a(href="#")
-          +svgMono('menu-2')
-      li
-        a(href="#")
-          +svgMono('menu-3')
-      li
-        a(href="#")
-          +svgMono('menu-4')
-      li
-        a(href="#")
-          +svgMono('menu-5')
-      li
-        a(href="#")
-          +svgMono('menu-6')
-      li
-        a(href="#")
-          +svgMono('menu-7')
+.sidebar-global-container
+  .sidebar
+    .sidebar__wrapper
+      ul.sidebar__menu.js-sidebar-nav
+        li(data-index="1").is-active
+          a(href="#")
+            +svgMono('menu-1')
+        li(data-index="2")
+          a(href="#")
+            +svgMono('menu-2')
+        li(data-index="3")
+          a(href="#")
+            +svgMono('menu-3')
+        li(data-index="4")
+          a(href="#")
+            +svgMono('menu-4')
+        li(data-index="5")
+          a(href="#")
+            +svgMono('menu-5')
+        li(data-index="6")
+          a(href="#")
+            +svgMono('menu-6')
+        li(data-index="7")
+          a(href="#")
+            +svgMono('menu-7')
 
-// sidebar menu
-.sidebar-menu.js-sidebar-menu
-  .sidebar-menu__wrapper
-    ul.sidebar-menu__menu
-      li.is-active
-        a(href="#") Поставки
-      li
-        a(href='#') Заявка на услугу
-      li
-        a(href="#") Текущие счета
-      li
-        a(href="#") Прайсы на услуги
-      li
-        a(href="#") Финансовые документы
-      li
-        a(href="#") Инвойсы поставщиков
-      li
-        a(href="#") Склад
+  // sidebar menu
+  .sidebar-menu.js-sidebar-menu
+    .sidebar-menu__wrapper
+      ul.sidebar-menu__menu
+        li(data-index="1").is-active
+          a(href="#") Поставки
+        li(data-index="2")
+          a(href='#') Заявка на услугу
+        li(data-index="3")
+          a(href="#") Текущие счета
+        li(data-index="4")
+          a(href="#") Прайсы на услуги
+        li(data-index="5")
+          a(href="#") Финансовые документы
+        li(data-index="6")
+          a(href="#") Инвойсы поставщиков
+        li(data-index="7")
+          a(href="#") Склад

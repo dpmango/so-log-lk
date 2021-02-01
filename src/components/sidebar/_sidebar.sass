@@ -1,4 +1,7 @@
 // SIDEBAR
+.sidebar-global-container
+  position: relative
+
 .sidebar
   position: fixed
   z-index: 10
@@ -24,18 +27,37 @@
     flex-direction: column
     li
       display: block
-      margin-bottom: 3px
+      margin-bottom: 2px
+      // dirty fix here because icons are not eq() in height
+      &:nth-child(1)
+        margin-bottom: 2px
+      &:nth-child(3)
+        margin-bottom: 5px
+      &:nth-child(4)
+        margin-bottom: 5px
+      &:nth-child(6)
+        margin-bottom: 0px
     a
       display: block
       padding: 10px
       min-width: 92px
       text-align: center
       color: $colorPrimary
-      transition: color .25s $ease
+      transition: color .15s $ease
       &:hover
         color: $fontColor
       .ico
         font-size: 34px
+      .ico-mono-menu-1
+        font-size: 36px
+      .ico-mono-menu-2
+        font-size: 34px
+      .ico-mono-menu-3
+        font-size: 33px
+      .ico-mono-menu-4
+        font-size: 32px
+      .ico-mono-menu-5
+        font-size: 33px
       .ico-mono-menu-6
         font-size: 40px
     li.is-active
@@ -43,7 +65,7 @@
         color: $fontColor
 
 
-// sidebar menu
+// sidebar menu (js-sidebar-menu)
 .sidebar-menu
   position: fixed
   z-index: 9
@@ -59,7 +81,7 @@
   transform: translate3d(-20px,0,0)
   pointer-events: none
   will-change: transform
-  transition: transform .25s $ease
+  transition: transform .25s $ease, opacity .1s $ease
   &.is-active
     opacity: 1
     pointer-events: all
@@ -84,7 +106,7 @@
       padding: 21px 30px 21px 20px
       min-width: 250px
       color: $fontColor
-      transition: color .25s $ease, background .25s $ease
+      transition: color .15s $ease, background .15s $ease
       &::after
         display: inline-block
         content: ''
@@ -98,7 +120,7 @@
         will-change: opacity
         pointer-events: none
         opacity: 0
-        transition: opacity .25s $ease
+        transition: opacity .15s $ease
       &:hover
         color: $colorPrimary
         background: white
