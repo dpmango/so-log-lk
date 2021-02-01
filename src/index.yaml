@@ -2,7 +2,7 @@ ProjectTitle: SO Logisitics
 
 PageList:
   - file: auth.html
-    ready: 20
+    ready: 60
   - file: signup.html
     ready: 0
   - file: dashboard.html
