@@ -8,12 +8,12 @@
       // this.clearable();
     },
     focuses: function() {
-      var $elements = $('.js-input-focus');
+      let $elements = $('.js-input-focus');
       if ($elements.length === 0) return;
 
       $elements.each(function(i, container) {
-        var $container = $(container);
-        var $input = $container.find('input, textarea');
+        let $container = $(container);
+        let $input = $container.find('input, textarea');
         if ($input.length === 0) return true;
 
         $input.on('focus', function() {
@@ -38,13 +38,13 @@
       });
     },
     // clearable: function() {
-    //   var $elements = $('.js-input-clearable');
+    //   let $elements = $('.js-input-clearable');
     //   if ($elements.length === 0) return;
 
     //   $elements.each(function(i, container) {
-    //     var $container = $(container);
-    //     var $input = $container.find('input');
-    //     var $clearBtn = $container.find('.ui-input-clear');
+    //     let $container = $(container);
+    //     let $input = $container.find('input');
+    //     let $clearBtn = $container.find('.ui-input-clear');
 
     //     // show/hide clear button
     //     $input.on('keyup', function() {

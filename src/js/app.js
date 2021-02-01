@@ -1,7 +1,7 @@
 /*********************
  * Initialization file for vendor-free frontend app.js
  *********************/
-var APP = window.APP || {};
+let APP = window.APP || {};
 APP.Dev = APP.Dev || {};
 APP.Browser = APP.Browser || {};
 APP.Plugins = APP.Plugins || {};
@@ -13,13 +13,13 @@ window.onbeforeunload = function() {
 };
 
 // shorthand operators
-var _window = $(window);
-var _document = $(document);
-var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
+let _window = $(window);
+let _document = $(document);
+let easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
 
 (function($, APP) {
   APP.Initilizer = function() {
-    var app = {};
+    let app = {};
 
     app.init = function() {
       app.initGlobalPlugins();
@@ -92,6 +92,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     // All components from `src/componenets`
     app.initComponents = function(fromPjax) {
       APP.Components.Header.init(fromPjax);
+      APP.Components.Sidebar.init(fromPjax);
     };
 
     return app;

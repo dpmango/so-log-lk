@@ -4,7 +4,7 @@
 (function($, APP) {
   APP.Plugins.Modals = {
     init: function() {
-      var startWindowScroll = 0;
+      let startWindowScroll = 0;
       $('[js-popup]').magnificPopup({
         type: 'inline',
         fixedContentPos: true,

@@ -7,13 +7,13 @@
       if (!fromPjax) {
         this.clickListeners();
       }
-      var $datepicker = $('.js-datepicker');
+      let $datepicker = $('.js-datepicker');
 
       if ($datepicker.length === 0) return;
 
       // compare DOM cell dates with instance dates helper function
       function compareDates(origin, $cell, addClass) {
-        var target = {
+        let target = {
           day: $cell.data('date'),
           month: $cell.data('month'),
         };
@@ -27,7 +27,7 @@
 
       // initialization
       $datepicker.each(function(i, picker) {
-        var $picker = $(picker);
+        let $picker = $(picker);
 
         $picker.datepicker({
           language: 'en',
@@ -38,17 +38,17 @@
           minView: 'days',
           onRenderCell: function(date, cellType) {
             if (cellType === 'day') {
-              var cellDates = {
+              let cellDates = {
                 day: date.getDate(),
                 month: date.getMonth(),
               };
               // targeting cells that are focused by hover
-              var $hovered = $('.datepicker--cell.-hovered-');
-              var classes = '';
+              let $hovered = $('.datepicker--cell.-hovered-');
+              let classes = '';
 
               if ($hovered.length > 0) {
-                var $curCell = $hovered.first();
-                var $lastCell = $hovered.last();
+                let $curCell = $hovered.first();
+                let $lastCell = $hovered.last();
 
                 // add classes
                 $hovered.each(function(i, cell) {
@@ -74,9 +74,9 @@
     },
     addFocusClasses: function($curCell, withRange) {
       // clear
-      var selectedRange = 4;
-      var $rangeCells = $curCell.nextAll().slice(0, selectedRange - 1);
-      var $lastCell = $rangeCells.last();
+      let selectedRange = 4;
+      let $rangeCells = $curCell.nextAll().slice(0, selectedRange - 1);
+      let $lastCell = $rangeCells.last();
 
       $rangeCells.addClass('-hovered-');
       $curCell.addClass('-hovered-').addClass('-range-from-hover-');
@@ -89,12 +89,12 @@
         .removeClass('-range-to-hover-');
     },
     clickListeners: function() {
-      var _this = this;
+      let _this = this;
 
       // adds only hover classes, clear every time
       _document
         .on('mouseenter', '.datepicker--cell', function() {
-          var $curCell = $(this);
+          let $curCell = $(this);
           if ($curCell.is('.-disabled-')) return;
           _this.addFocusClasses($curCell);
         })

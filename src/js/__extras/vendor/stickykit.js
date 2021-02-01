@@ -1,8 +1,8 @@
 (function($) {
-  var win = $(window);
+  let win = $(window);
 
   $.fn.stick_in_parent = function(opts) {
-    var doc,
+    let doc,
       elm,
       enable_bottoming,
       fn,
@@ -18,12 +18,12 @@
       opts = {};
     }
     (sticky_class = opts.sticky_class),
-      (inner_scrolling = opts.inner_scrolling),
-      (recalc_every = opts.recalc_every),
-      (parent_selector = opts.parent),
-      (offset_top = opts.offset_top),
-      (manual_spacer = opts.spacer),
-      (enable_bottoming = opts.bottoming);
+    (inner_scrolling = opts.inner_scrolling),
+    (recalc_every = opts.recalc_every),
+    (parent_selector = opts.parent),
+    (offset_top = opts.offset_top),
+    (manual_spacer = opts.spacer),
+    (enable_bottoming = opts.bottoming);
     if (offset_top == null) {
       offset_top = 0;
     }
@@ -41,7 +41,7 @@
       enable_bottoming = true;
     }
     fn = function(elm, padding_bottom, parent_top, parent_height, top, height, el_float, detached) {
-      var bottomed,
+      let bottomed,
         detach,
         fixed,
         last_pos,
@@ -72,7 +72,7 @@
         spacer.css('position', elm.css('position'));
       }
       recalc = function() {
-        var border_top, padding_top, restore;
+        let border_top, padding_top, restore;
         if (detached) {
           return;
         }
@@ -123,7 +123,7 @@
       offset = offset_top;
       recalc_counter = recalc_every;
       tick = function() {
-        var css, delta, recalced, scroll, will_bottom, win_height;
+        let css, delta, recalced, scroll, will_bottom, win_height;
         if (detached) {
           return;
         }

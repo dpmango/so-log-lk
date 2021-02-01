@@ -27,9 +27,9 @@
       this.controlHeaderClass();
     },
     getHeaderParams: function() {
-      var $header = $('.header');
-      var headerOffsetTop = 0;
-      var headerHeight = $header.outerHeight() + headerOffsetTop;
+      let $header = $('.header');
+      let headerOffsetTop = 0;
+      let headerHeight = $header.outerHeight() + headerOffsetTop;
 
       this.data.header = {
         container: $header,
@@ -79,11 +79,11 @@
     },
     scrollHeader: function() {
       if (this.data.header.container !== undefined) {
-        var fixedClass = 'is-fixed';
-        var visibleClass = 'is-fixed-visible';
+        let fixedClass = 'is-fixed';
+        let visibleClass = 'is-fixed-visible';
 
         // get scroll params from blocker function
-        var scroll = APP.Plugins.ScrollBlock.getData();
+        let scroll = APP.Plugins.ScrollBlock.getData();
 
         if (scroll.blocked) return;
 
@@ -97,8 +97,8 @@
           }
         } else {
           // emulate position absolute by giving negative transform on initial scroll
-          var normalized = Math.floor(normalize(scroll.y, this.data.header.bottomPoint, 0, 0, 100));
-          var reverseNormalized = (100 - normalized) * -1;
+          let normalized = Math.floor(normalize(scroll.y, this.data.header.bottomPoint, 0, 0, 100));
+          let reverseNormalized = (100 - normalized) * -1;
           reverseNormalized = reverseNormalized * 1.2; // a bit faster transition
 
           this.data.header.container.css({
@@ -111,7 +111,7 @@
     },
     setMenuClass: function() {
       // SET ACTIVE CLASS IN HEADER
-      var headerMenuList = $('.header__menu li');
+      let headerMenuList = $('.header__menu li');
       if (headerMenuList.length === 0) return;
 
       headerMenuList.each(function(i, val) {
@@ -129,7 +129,7 @@
     controlHeaderClass: function() {
       this.data.header.container.attr('data-modifier', false);
 
-      var $modifierElement = $('.page')
+      let $modifierElement = $('.page')
         .last()
         .find('[js-header-class]');
 

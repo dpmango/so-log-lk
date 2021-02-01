@@ -111,9 +111,9 @@ app.refresh = function() {
     },
     // записываем данные в обьект data компонента
     getHeaderParams: function() {
-      var $header = $('.header');
-      var headerOffsetTop = 0;
-      var headerHeight = $header.outerHeight() + headerOffsetTop;
+      let $header = $('.header');
+      let headerOffsetTop = 0;
+      let headerHeight = $header.outerHeight() + headerOffsetTop;
       
       // доступно через this
       this.data.header = {
@@ -137,7 +137,7 @@ app.refresh = function() {
       // у .on свой контекст this, поэтому нужен .bind(this)
       _window.on('resize', debounce(this.getHeaderParams.bind(this), 100));
       // (или) альтернативный вариант
-      var _this = this; // ссылаемся на this на верхнем уровне
+      let _this = this; // ссылаемся на this на верхнем уровне
       _window.on('resize', debounce(_this.getHeaderParams, 100));
     },
     // обработка скролла

@@ -12,8 +12,8 @@
       this.listenResize();
     },
     getElements: function() {
-      var _this = this;
-      var $teleports = $('.page')
+      let _this = this;
+      let $teleports = $('.page')
         .last()
         .find('.js-teleport');
       _this.data.teleports = [];
@@ -23,10 +23,10 @@
       }
 
       $teleports.each(function(i, tp) {
-        var $el = $(tp);
-        var $target = $('[data-teleport-target=' + $el.data('teleport-to') + ']');
-        var conditionMedia = $el.data('teleport-condition').substring(1);
-        var conditionPosition = $el.data('teleport-condition').substring(0, 1);
+        let $el = $(tp);
+        let $target = $('[data-teleport-target=' + $el.data('teleport-to') + ']');
+        let conditionMedia = $el.data('teleport-condition').substring(1);
+        let conditionPosition = $el.data('teleport-condition').substring(0, 1);
 
         _this.data.teleports.push({
           el: $el,
@@ -48,7 +48,7 @@
 
       $.each(this.data.teleports, function(i, obj) {
         if (obj.target && obj.html && obj.conditionPosition) {
-          var condition;
+          let condition;
 
           if (obj.conditionPosition === '<') {
             condition = window.innerWidth <= obj.conditionMedia;

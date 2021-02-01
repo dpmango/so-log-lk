@@ -15,7 +15,7 @@
       _document.on('click', '.js-open-pswp', function(e) {
         e.preventDefault();
 
-        var $curLink = $(this);
+        let $curLink = $(this);
 
         APP.Plugins.Photoswipe.getThumbData($curLink);
         APP.Plugins.Photoswipe.buildItems($curLink);
@@ -28,11 +28,11 @@
       this.data.curThumbnail = undefined;
 
       // get swiper slide index
-      var $swiper = $originLink.closest('.swiper-container');
-      var isPhotoSwiper = $swiper.is('.js-swiper-photos');
+      let $swiper = $originLink.closest('.swiper-container');
+      let isPhotoSwiper = $swiper.is('.js-swiper-photos');
 
       if ($swiper.length > 0) {
-        var swiperInst = $swiper[0].swiper;
+        let swiperInst = $swiper[0].swiper;
         if (swiperInst && !isPhotoSwiper) {
           this.data.curSlideIndex = $swiper[0].swiper.realIndex;
         } else {
@@ -44,15 +44,15 @@
       this.data.curThumbnail = $originLink.find('img');
     },
     buildItems: function($originLink) {
-      var _this = this;
-      var $elements = $originLink.closest('.swiper-container').find('.js-open-pswp');
+      let _this = this;
+      let $elements = $originLink.closest('.swiper-container').find('.js-open-pswp');
       if ($elements.length === 0) return;
 
       this.data.pswpItems = [];
       $elements.each(function(i, element) {
-        var $element = $(element);
-        var isSlideDuplicate = $element.closest('.swiper-slide-duplicate').length > 0;
-        var targetImg = $element.find('img');
+        let $element = $(element);
+        let isSlideDuplicate = $element.closest('.swiper-slide-duplicate').length > 0;
+        let targetImg = $element.find('img');
 
         // swiper dupplicates filter
         if (isSlideDuplicate) return true;
@@ -60,9 +60,9 @@
         // push to data array
         if ($element.data('pswp-source') !== undefined) {
           // build from attributes if pswp-source type
-          var size = $element.data('size').split('x');
+          let size = $element.data('size').split('x');
 
-          var pswpObj = {
+          let pswpObj = {
             src: $element.attr('data-href'),
             msrc: targetImg[0].src, // small image placeholder, main (large) image loads on top of it
             w: parseInt(size[0], 10),
@@ -70,9 +70,9 @@
           };
 
           // optional attributes (caption)
-          var $title = $element.find('[data-pswp-title]');
-          var $subtitle = $element.find('[data-pswp-subtitle]');
-          var $stats = $element.find('[data-pswp-stats]');
+          let $title = $element.find('[data-pswp-title]');
+          let $subtitle = $element.find('[data-pswp-subtitle]');
+          let $stats = $element.find('[data-pswp-stats]');
 
           if ($title.length > 0) {
             pswpObj.title = $title.html();
@@ -100,22 +100,22 @@
       });
     },
     openPSWP: function($originLink) {
-      var $pswpElement = $('.pswp');
+      let $pswpElement = $('.pswp');
       if ($pswpElement.length === 0) return;
 
-      var items = this.data.pswpItems;
-      var curThumbnail = this.data.curThumbnail;
+      let items = this.data.pswpItems;
+      let curThumbnail = this.data.curThumbnail;
 
-      var options = {
+      let options = {
         index: this.data.curSlideIndex,
         shareEl: false,
         history: false,
         getThumbBoundsFn: function(index) {
-          var pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
-          var targetThumbnail = curThumbnail;
+          let pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+          let targetThumbnail = curThumbnail;
 
           if (curThumbnail.closest('.swiper-container').length > 0) {
-            var isPhotoSwiper = curThumbnail.closest('.swiper-container').is('.js-swiper-photos');
+            let isPhotoSwiper = curThumbnail.closest('.swiper-container').is('.js-swiper-photos');
             if (!isPhotoSwiper) {
               targetThumbnail = curThumbnail
                 .closest('.swiper-container')
@@ -129,11 +129,11 @@
             }
           }
 
-          var rect = targetThumbnail[0].getBoundingClientRect();
+          let rect = targetThumbnail[0].getBoundingClientRect();
           return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
         },
         addCaptionHTMLFn: function(item, captionEl) {
-          var captionHtml = '';
+          let captionHtml = '';
           if (item.title) {
             captionHtml = item.title;
           }
@@ -152,14 +152,14 @@
       };
 
       // Initializes and opens PhotoSwipe
-      var gallery = new PhotoSwipe($pswpElement[0], PhotoSwipeUI_Default, items, options);
+      let gallery = new PhotoSwipe($pswpElement[0], PhotoSwipeUI_Default, items, options);
       gallery.init();
 
       // Sync active slide in swiper
       gallery.listen('beforeChange', function() {
-        var $swiper = $originLink.closest('.swiper-container');
+        let $swiper = $originLink.closest('.swiper-container');
         if ($swiper.length > 0) {
-          var swiper = $swiper[0].swiper;
+          let swiper = $swiper[0].swiper;
           if (swiper.params.loop) {
             swiper.slideToLoop(gallery.getCurrentIndex());
           } else {

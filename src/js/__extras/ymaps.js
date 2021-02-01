@@ -17,20 +17,20 @@
       }
     },
     createScripts: function() {
-      var ymapsK = '9ba9a278-xxxxxxxxx';
-      var ymapsScript = document.createElement('script');
+      let ymapsK = '9ba9a278-xxxxxxxxx';
+      let ymapsScript = document.createElement('script');
       ymapsScript.type = 'text/javascript';
       ymapsScript.src = 'https://api-maps.yandex.ru/2.1/?apikey=' + ymapsK + '&lang=ru_RU';
       $('head').append(ymapsScript);
       this.data.scriptsCreated = true;
     },
     tryLoadScripts: function() {
-      var _this = this;
+      let _this = this;
       if (!_this.data.scriptsCreated) {
         _this.createScripts();
       }
 
-      var ticker = setInterval(readyChecker, 250);
+      let ticker = setInterval(readyChecker, 250);
       function readyChecker() {
         if (!_this.data.ymapsLoaded) {
           try {
@@ -46,18 +46,18 @@
       }
     },
     initMaps: function() {
-      var _this = this;
+      let _this = this;
       $('.js-ymap').each(function(i, domElement) {
         _this.drawMap(domElement);
       });
     },
     drawMap: function(domElement) {
-      var _this = this;
-      var $domElement = $(domElement);
+      let _this = this;
+      let $domElement = $(domElement);
       if ($domElement.length === 0) return;
 
-      var myMap;
-      var params = {
+      let myMap;
+      let params = {
         center: _this.geoStringToArr($domElement.data('center')),
         zoom: $domElement.data('zoom') || 10,
         placeholder: {
@@ -88,7 +88,7 @@
 
       // PLACEHOLDER
       if (params.placeholder.geodata) {
-        var placeholder = new ymaps.Placemark(
+        let placeholder = new ymaps.Placemark(
           params.placeholder.geodata,
           {
             balloonContent: params.placeholder.balloon,
@@ -103,7 +103,7 @@
       }
     },
     geoStringToArr: function(str) {
-      var split = str.split(',');
+      let split = str.split(',');
       if (split.length === 2) {
         return [parseFloat(split[0]), parseFloat(split[1])];
       }

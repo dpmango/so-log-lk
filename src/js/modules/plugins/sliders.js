@@ -27,7 +27,7 @@
       this.initResponsiveSwipers();
     },
     update: function(selector) {
-      var $swiper;
+      let $swiper;
       // if selector passed - update only with selector
       if (selector) {
         $swiper = $(`${selector}.swiper-container-initialized`);
@@ -45,19 +45,19 @@
       _window.on('resize', debounce(this.initResponsiveSwipers.bind(this), 200));
     },
     initSwipers: function() {
-      var $page = $('.page').last();
+      let $page = $('.page').last();
 
       // PDP gallery (initialization as a group)
       // gallery main is dependand on thumbs
-      var haveGalleryThumbs = $page.find('.js-pdpGallery-thumbs').length > 0;
-      var haveGalleryMain = $page.find('.js-pdpGallery-main').length > 0;
+      let haveGalleryThumbs = $page.find('.js-pdpGallery-thumbs').length > 0;
+      let haveGalleryMain = $page.find('.js-pdpGallery-main').length > 0;
       if (haveGalleryThumbs && haveGalleryMain) {
-        var selector = '.js-pdpGallery-thumbs:not(.swiper-container-initialized)';
-        var $thumbs = $page.find(selector);
+        let selector = '.js-pdpGallery-thumbs:not(.swiper-container-initialized)';
+        let $thumbs = $page.find(selector);
         // if ($thumbs.length === 0) return;
 
         $thumbs.each(function(i, thumb) {
-          var id = $(thumb).data('swiper-group-id');
+          let id = $(thumb).data('swiper-group-id');
           new Swiper(thumb, {
             slideToClickedSlide: false,
             preventClicks: false,
@@ -79,7 +79,7 @@
 
       function initGallerySwiper(id, thumbsInstance) {
         // PDP main
-        var selector = `.js-pdpGallery-main[data-swiper-group-id="${id}"]`;
+        let selector = `.js-pdpGallery-main[data-swiper-group-id="${id}"]`;
         if ($page.find(selector).length > 0) {
           new Swiper(selector, {
             loop: true,
@@ -104,13 +104,13 @@
       }
     },
     initSwiperDataTree: function() {
-      var productsSwiper = '.js-products-swiper';
+      let productsSwiper = '.js-products-swiper';
       if ($(productsSwiper).length > 0) {
         this.initSwiperTree(productsSwiper, 'productsSwiper');
       }
     },
     initResponsiveSwipers: function() {
-      var productsSwiper = '.js-products-swiper';
+      let productsSwiper = '.js-products-swiper';
       if ($(productsSwiper).length > 0) {
         this.responsiveSwiperConstructor(productsSwiper, 'productsSwiper', {
           watchOverflow: true,
@@ -123,14 +123,14 @@
       }
     },
     initSwiperTree: function(selector, name) {
-      var _this = this;
+      let _this = this;
       _this.data.responsiveSwipers[name].instances = [];
       $(selector).each(function(i, sw) {
         _this.data.responsiveSwipers[name].instances.push(undefined);
       });
     },
     responsiveSwiperConstructor: function(selector, objName, options) {
-      var dataObj = this.data.responsiveSwipers[objName];
+      let dataObj = this.data.responsiveSwipers[objName];
 
       $(selector).each(function(idx, element) {
         if (window.innerWidth <= dataObj.enableOn) {

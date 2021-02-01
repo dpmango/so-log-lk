@@ -11,15 +11,15 @@
       }
     },
     getScaler: function() {
-      var $images = $('.page')
+      let $images = $('.page')
         .last()
         .find('.js-scaler');
       if ($images.length > 0) {
         $images.each(function(i, img) {
-          var $img = $(img);
-          var mobileArPx = $img.css('padding-bottom');
-          var imgWidth = $img.width();
-          var mobileArPercent;
+          let $img = $(img);
+          let mobileArPx = $img.css('padding-bottom');
+          let imgWidth = $img.width();
+          let mobileArPercent;
           if (mobileArPx.indexOf('%') !== -1) {
             mobileArPercent = mobileArPx;
           } else {
@@ -34,18 +34,18 @@
       _window.on('resize', debounce(this.setScaler.bind(this), 100));
     },
     setScaler: function() {
-      var $images = $('.page')
+      let $images = $('.page')
         .last()
         .find('.js-scaler');
 
       if ($images.length > 0) {
-        var wWidth = window.innerWidth;
+        let wWidth = window.innerWidth;
         $images.each(function(i, img) {
-          var $img = $(img);
-          var mobileAr = $img.data('ar-576');
-          var tabletAr = $img.data('ar-768');
-          var desktopAr = $img.data('ar-992');
-          var initialAr = $img.data('ar-mobile');
+          let $img = $(img);
+          let mobileAr = $img.data('ar-576');
+          let tabletAr = $img.data('ar-768');
+          let desktopAr = $img.data('ar-992');
+          let initialAr = $img.data('ar-mobile');
 
           if (mobileAr) {
             if (wWidth > 575) {
@@ -88,7 +88,7 @@
       } else if (ar === '4:6') {
         return '150%';
       } else if (ar.split('/').length) {
-        var arAsWidthHeight = ar.split('/');
+        let arAsWidthHeight = ar.split('/');
         if (arAsWidthHeight.length === 2) {
           return (parseInt(arAsWidthHeight[0]) / parseInt(arAsWidthHeight[1])) * 100 + '%';
         }

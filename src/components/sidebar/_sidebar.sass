@@ -18,15 +18,15 @@
     padding-top: 90px
   &__menu
     flex: 0 0 auto
-    margin: 25px 0 0
+    margin: 30px 0 0
     padding: 0
     display: flex
     flex-direction: column
     li
-      display: inline-block
-      margin-bottom: 5px
+      display: block
+      margin-bottom: 3px
     a
-      display: inline-block
+      display: block
       padding: 10px
       min-width: 92px
       text-align: center
@@ -41,3 +41,72 @@
     li.is-active
       a
         color: $fontColor
+
+
+// sidebar menu
+.sidebar-menu
+  position: fixed
+  z-index: 9
+  top: 0
+  left: 92px
+  bottom: 0
+  max-height: 100%
+  background: $colorBg
+  display: flex
+  flex-direction: column
+  overflow-y: auto
+  opacity: 0
+  transform: translate3d(-20px,0,0)
+  pointer-events: none
+  will-change: transform
+  transition: transform .25s $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translate3d(0,0,0)
+  &__wrapper
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    position: relative
+    padding-top: 90px
+  &__menu
+    flex: 0 0 auto
+    margin: 30px 0 0
+    padding: 0
+    display: flex
+    flex-direction: column
+    li
+      display: block
+    a
+      position: relative
+      display: block
+      padding: 21px 30px 21px 20px
+      min-width: 250px
+      color: $fontColor
+      transition: color .25s $ease, background .25s $ease
+      &::after
+        display: inline-block
+        content: ''
+        background: svg-load('../icons/svg-mono/arrow-right.svg') no-repeat center center
+        background-size: cover
+        size: 8px 12px
+        position: absolute
+        right: 15px
+        top: 50%
+        transform: translate(0, -50%)
+        will-change: opacity
+        pointer-events: none
+        opacity: 0
+        transition: opacity .25s $ease
+      &:hover
+        color: $colorPrimary
+        background: white
+        &::after
+          opacity: 1
+    li.is-active
+      a
+        color: $colorPrimary
+        background: white
+        &::after
+          opacity: 1

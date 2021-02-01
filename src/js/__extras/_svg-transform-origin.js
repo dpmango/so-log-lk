@@ -3,7 +3,7 @@
 ////////////
 
 function parseSvg() {
-  var _this = $('.header__logo svg');
+  let _this = $('.header__logo svg');
   if (_this.length > 0) {
     centerTransformOrigin(_this, 'logo-mark');
   }
@@ -11,14 +11,14 @@ function parseSvg() {
 
 // sets transform origin to center for a target class (inside svg target_el)
 function centerTransformOrigin(targetEl, targetClass) {
-  var findClass = '.' + targetClass;
-  var myElement = targetEl.find(findClass);
+  let findClass = '.' + targetClass;
+  let myElement = targetEl.find(findClass);
 
-  var bb = myElement.get(0).getBBox();
-  var cx = bb.x + bb.width / 2;
-  var cy = bb.y + bb.height / 2;
+  let bb = myElement.get(0).getBBox();
+  let cx = bb.x + bb.width / 2;
+  let cy = bb.y + bb.height / 2;
 
-  var bodyStyle =
+  let bodyStyle =
     '<style>' +
     '.' +
     $(target_el)

@@ -4,8 +4,8 @@
 
 // LINEAR NORMALIZATION
 function normalize(value, fromMin, fromMax, toMin, toMax) {
-  var pct = (value - fromMin) / (fromMax - fromMin);
-  var normalized = pct * (toMax - toMin) + toMin;
+  let pct = (value - fromMin) / (fromMax - fromMin);
+  let normalized = pct * (toMax - toMin) + toMin;
 
   //Cap output to min/max
   if (normalized > toMax) return toMax;
@@ -35,7 +35,7 @@ function formatNumberWithSpaces(num) {
 // Add padding to numbers (a.k.a format by mask 00)
 // use (9).pad(2) // output - 09
 Number.prototype.pad = function(size) {
-  var s = String(this);
+  let s = String(this);
   while (s.length < (size || 2)) {
     s = '0' + s;
   }
@@ -59,7 +59,7 @@ function hasCrossedBreakpoint(prevResize, curWidth, targetBp) {
 // например "1 пешеход", "2 пешехода", "5 пешеходов"
 // или "1 человек", "2 человека", "5 человек"  {1 и 5} - одиникавые
 function Plurize(number, one, two, five) {
-  var n = Math.abs(number);
+  let n = Math.abs(number);
   n %= 100;
   if (n >= 5 && n <= 20) {
     return five;
@@ -76,7 +76,7 @@ function Plurize(number, one, two, five) {
 
 // convert hex to rgba
 function rgba(hex, alpha) {
-  var r = parseInt(hex.slice(1, 3), 16),
+  let r = parseInt(hex.slice(1, 3), 16),
     g = parseInt(hex.slice(3, 5), 16),
     b = parseInt(hex.slice(5, 7), 16);
 
@@ -89,9 +89,9 @@ function rgba(hex, alpha) {
 
 // MEDIA Condition helper function
 function mediaCondition(cond) {
-  var disabledBp;
-  var conditionMedia = cond.substring(1);
-  var conditionPosition = cond.substring(0, 1);
+  let disabledBp;
+  let conditionMedia = cond.substring(1);
+  let conditionPosition = cond.substring(0, 1);
 
   if (conditionPosition === '<') {
     disabledBp = getWindowWidth() < conditionMedia;

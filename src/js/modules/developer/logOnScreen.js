@@ -1,13 +1,13 @@
 (function($, APP) {
   APP.Dev.LogOnScreen = {
     showLog: function(message) {
-      var wHost = window.location.host.toLowerCase();
-      var displayCondition =
+      let wHost = window.location.host.toLowerCase();
+      let displayCondition =
         wHost.indexOf('localhost') >= 0 ||
         wHost.indexOf('surge') >= 0 ||
         wHost.indexOf('netlify') >= 0;
       if (displayCondition) {
-        var content = "<div class='dev-bp-debug'>" + message + '</div>';
+        let content = "<div class='dev-bp-debug'>" + message + '</div>';
 
         $('.page').append(content);
         setTimeout(function() {

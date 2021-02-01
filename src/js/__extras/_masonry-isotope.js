@@ -4,9 +4,9 @@
 function initMasonry() {
   if ($('[js-masonry]').length > 0) {
     $('[js-masonry]').each(function(i, masonry) {
-      var $masonry = $(masonry);
-      var $grid;
-      var masonryOption = {
+      let $masonry = $(masonry);
+      let $grid;
+      let masonryOption = {
         // layoutMode: 'masonry',
         layoutMode: 'packery',
         itemSelector: '[js-masonry-card]',
@@ -30,16 +30,16 @@ function initMasonry() {
 
 // masonry click handlers
 _document.on('click', '[js-masonry-filter] a', function() {
-  var $this = $(this);
-  var gridTarget = $this.closest('[js-masonry-filter]').data('target');
-  var $masonryGrid = $('[js-masonry][data-for="' + gridTarget + '"]');
-  var dataFilter = $this.data('filter');
+  let $this = $(this);
+  let gridTarget = $this.closest('[js-masonry-filter]').data('target');
+  let $masonryGrid = $('[js-masonry][data-for="' + gridTarget + '"]');
+  let dataFilter = $this.data('filter');
 
   $masonryGrid.isotope({
     filter: function() {
       if (!dataFilter) return true; // if filter is blank - show all
 
-      var cardFilters = $(this)
+      let cardFilters = $(this)
         .data('filter')
         .split(' ');
       return cardFilters.indexOf(dataFilter) !== -1;

@@ -1,7 +1,7 @@
 // SIDEBAR
 .sidebar
   .sidebar__wrapper
-    ul.sidebar__menu
+    ul.sidebar__menu.js-sidebar-nav
       li.is-active
         a(href="#")
           +svgMono('menu-1')
@@ -23,3 +23,22 @@
       li
         a(href="#")
           +svgMono('menu-7')
+
+// sidebar menu
+.sidebar-menu.js-sidebar-menu
+  .sidebar-menu__wrapper
+    ul.sidebar-menu__menu
+      li.is-active
+        a(href="#") Поставки
+      li
+        a(href='#') Заявка на услугу
+      li
+        a(href="#") Текущие счета
+      li
+        a(href="#") Прайсы на услуги
+      li
+        a(href="#") Финансовые документы
+      li
+        a(href="#") Инвойсы поставщиков
+      li
+        a(href="#") Склад

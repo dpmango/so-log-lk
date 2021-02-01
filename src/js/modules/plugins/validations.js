@@ -24,7 +24,7 @@
         }
       },
       validateHighlight: function(element) {
-        var $element = $(element);
+        let $element = $(element);
 
         if ($element.is('select')) {
           $element.closest('.selectric-wrapper').addClass('has-error');
@@ -33,7 +33,7 @@
         }
       },
       validateUnhighlight: function(element) {
-        var $element = $(element);
+        let $element = $(element);
 
         if ($element.is('select')) {
           $element.closest('.selectric-wrapper').removeClass('has-error');
@@ -43,10 +43,10 @@
       },
       validateSubmitHandler: function(form) {
         $(form).addClass('loading');
-        var formData = $(form).serialize();
-        var sucessFunction = $(form).data('success-function');
+        let formData = $(form).serialize();
+        let sucessFunction = $(form).data('success-function');
         if (sucessFunction !== undefined) {
-          var x = eval(sucessFunction);
+          let x = eval(sucessFunction);
           if (typeof x == 'function') {
             x(formData);
           }
@@ -56,7 +56,7 @@
         phone: {
           required: true,
           normalizer: function(value) {
-            var PHONE_MASK = '+X (XXX) XXX-XXXX';
+            let PHONE_MASK = '+X (XXX) XXX-XXXX';
             if (!value || value === PHONE_MASK) {
               return value;
             } else {
@@ -111,15 +111,15 @@
       });
     },
     validateFormsConstructor: function() {
-      var _this = this;
+      let _this = this;
 
-      var $forms = $('.js-validate-form:not(.is-validation-attached)');
+      let $forms = $('.js-validate-form:not(.is-validation-attached)');
       if ($forms.length === 0) return;
       // CONSTRUCTOR LIKE FIRST
       $forms.each(function(i, form) {
-        var $form = $(form);
+        let $form = $(form);
 
-        var validationOptions = {
+        let validationOptions = {
           errorPlacement: _this.data.validateErrorPlacement,
           highlight: _this.data.validateHighlight,
           unhighlight: _this.data.validateUnhighlight,
@@ -150,8 +150,8 @@
       });
     },
     validateFormsCustom: function() {
-      var _this = this;
-      var requestValidationObject = {
+      let _this = this;
+      let requestValidationObject = {
         errorPlacement: _this.data.validateErrorPlacement,
         highlight: _this.data.validateHighlight,
         unhighlight: _this.data.validateUnhighlight,

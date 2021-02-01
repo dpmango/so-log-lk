@@ -34,7 +34,7 @@
 
       if (APP.Browser().data.isMobile) {
         // which elements are scrollable when scroll is locked?
-        var $blockers = $('.blocker, .mobile-menu__scroller');
+        let $blockers = $('.blocker, .mobile-menu__scroller');
 
         if ($blockers.length > 0) {
           $blockers.each(function(i, el) {
@@ -61,7 +61,7 @@
     enableScroll: function(target) {
       // console.log('enable', this.data.lastForBodyLock);
       if ($('.blocker').length) return;
-      var _this = this;
+      let _this = this;
 
       if (APP.Browser().data.isMobile) {
         // APP.Dev.LogOnScreen.showLog('enablePageScroll');
@@ -86,7 +86,7 @@
     getWindowScroll: function() {
       if (this.data.blocked) return;
 
-      var wScroll = _window.scrollTop();
+      let wScroll = _window.scrollTop();
       this.data.y = wScroll;
       this.data.direction = wScroll > this.data.lastForScrollDir ? 'down' : 'up';
 
@@ -101,25 +101,25 @@
         let scrollBarWidth;
         scrollBarWidth = this.getScrollBarWidth($target, true);
 
-        var computedStyle = window.getComputedStyle($target);
+        let computedStyle = window.getComputedStyle($target);
 
-        var fillGapMethod = this.data.fillGapMethod;
+        let fillGapMethod = this.data.fillGapMethod;
         if (fillGapMethod === 'margin') {
-          var currentMargin = parseFloat(computedStyle.marginRight);
+          let currentMargin = parseFloat(computedStyle.marginRight);
           $target.style.marginRight = `${currentMargin + scrollBarWidth}px`;
         } else if (fillGapMethod === 'width') {
           $target.style.width = `calc(100% - ${scrollBarWidth}px)`;
         } else if (fillGapMethod === 'max-width') {
           $target.style.maxWidth = `calc(100% - ${scrollBarWidth}px)`;
         } else if (fillGapMethod === 'padding') {
-          var currentPadding = parseFloat(computedStyle.paddingRight);
+          let currentPadding = parseFloat(computedStyle.paddingRight);
           $target.style.paddingRight = `${currentPadding + scrollBarWidth}px`;
         }
       }
     },
     unfillGapTarget: function($target) {
       if ($target instanceof Node) {
-        var fillGapMethod = this.data.fillGapMethod;
+        let fillGapMethod = this.data.fillGapMethod;
 
         if (fillGapMethod === 'margin') {
           $target.style.marginRight = '';
@@ -134,9 +134,9 @@
     },
     getScrollBarWidth: function($target) {
       if ($target instanceof Node) {
-        var documentWidth = document.documentElement.clientWidth;
-        var windowWidth = window.innerWidth;
-        var currentWidth = windowWidth - documentWidth;
+        let documentWidth = document.documentElement.clientWidth;
+        let windowWidth = window.innerWidth;
+        let currentWidth = windowWidth - documentWidth;
         return currentWidth;
       } else {
         return 0;

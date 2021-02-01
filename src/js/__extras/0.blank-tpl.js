@@ -12,11 +12,11 @@
 })(jQuery, window.APP);
 
 // Constructor style
-// var module = new APP.Plugins.ContrcutorModuleDemo('.header', params)
+// let module = new APP.Plugins.ContrcutorModuleDemo('.header', params)
 // module.init()
 (function($, APP) {
   APP.Plugins.DemoContrcutorModule = function(el, data) {
-    var $el = $(el);
+    let $el = $(el);
 
     this.init = function() {
       // ... code ...
@@ -33,7 +33,7 @@
 // new APP.Plugins.ContrcutorModuleDemo('foo').getData()
 (function($, APP) {
   APP.Plugins.DemoContrcutorModule2 = function(foo, bar) {
-    var methods = {};
+    let methods = {};
 
     methods.init = function() {
       // ... code ...

@@ -11,10 +11,10 @@
       _window.on('resize', throttle(this.revealFooter.bind(this), 100));
     },
     revealFooter: function() {
-      var footer = $('[js-reveal-footer]');
+      let footer = $('[js-reveal-footer]');
       if (footer.length > 0) {
-        var footerHeight = footer.outerHeight();
-        var maxHeight = _window.height() - footerHeight > 100;
+        let footerHeight = footer.outerHeight();
+        let maxHeight = _window.height() - footerHeight > 100;
         if (maxHeight && !msieversion()) {
           $('body').css({
             'margin-bottom': footerHeight,

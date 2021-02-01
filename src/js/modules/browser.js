@@ -3,11 +3,11 @@
 //////////
 (function($, APP) {
   APP.Browser = function() {
-    var methods = {};
+    let methods = {};
 
     methods.isRetinaDisplay = function() {
       if (window.matchMedia) {
-        var mq = window.matchMedia(
+        let mq = window.matchMedia(
           'only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)'
         );
         return (mq && mq.matches) || window.devicePixelRatio > 1;
@@ -33,8 +33,8 @@
     };
 
     methods.msieversion = function() {
-      var ua = window.navigator.userAgent;
-      var msie = ua.indexOf('MSIE ');
+      let ua = window.navigator.userAgent;
+      let msie = ua.indexOf('MSIE ');
 
       if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./)) {
         return true;
@@ -59,7 +59,7 @@
       }
     };
 
-    var data = {
+    let data = {
       isIe: methods.msieversion(),
       isMobile: methods.isMobile(),
       isIosDevice: methods.isIosDevice(),

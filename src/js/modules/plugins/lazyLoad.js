@@ -4,7 +4,7 @@
 (function($, APP) {
   APP.Plugins.LazyLoadImages = {
     init: function() {
-      var $lazy = _document.find('[js-lazy]:not(.is-loaded)');
+      let $lazy = _document.find('[js-lazy]:not(.is-loaded)');
       if ($lazy.length === 0) {
         APP.Plugins.LegacySupport.fixImages();
         return;
@@ -13,12 +13,12 @@
       this.initLazy($lazy);
     },
     load: function(DOMelement) {
-      var $lazy = $(DOMelement);
+      let $lazy = $(DOMelement);
 
       this.initLazy($lazy);
     },
     initLazy: function($lazy) {
-      var _this = this;
+      let _this = this;
       $lazy.Lazy({
         threshold: APP.Browser().data.isMobile ? 500 : 800,
         enableThrottle: true,
@@ -50,8 +50,8 @@
       triggerBody();
     },
     animateLazy: function(element) {
-      var fadeTimeout = 250;
-      var $scaler = element.closest('.scaler');
+      let fadeTimeout = 250;
+      let $scaler = element.closest('.scaler');
       $scaler.addClass('is-loaded');
 
       if ($scaler.length === 0) {
