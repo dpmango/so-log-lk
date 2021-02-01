@@ -1,0 +1,33 @@
+// AUTH
+.auth
+  .container.container--6
+    .auth__wrapper
+      h3.auth__title.h3-title(data-aos="fade-down") Регистрация
+
+      form.auth__form.js-validate-form(data-aos="fade" data-success-function="funcNameCallbackSucces")
+        .row
+          .col.col-6.col-md-12
+            .ui-group
+              label(for="auth_login") Логин
+              input.ui-input(type="text" name="login" id="auth_login" required)
+
+          .col.col-6.col-md-12
+            .ui-group
+              label(for="auth_login") Email
+              input.ui-input(type="text" name="login" id="auth_login" required)
+
+          .col.col-6.col-md-12
+            .ui-group
+              label(for="auth_pass") Пароль
+              input.ui-input(type="password" name="pass" id="auth_pass" minlength="6" required)
+          .col.col-6.col-md-12
+            .ui-group
+              label(for="auth_pass_2") Пароль
+              input.ui-input(type="password" name="pass2" id="auth_pass_2" equalTo="auth_pass")
+
+          .col.col-12
+            .auth__cta
+              button(type="submit").btn.btn-primary Зарегистрироваться
+
+          .col.col-12.mt-2
+            a(href="auth.html").helper-link Войти
