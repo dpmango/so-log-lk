@@ -1,5 +1,5 @@
 //////////
-// LEGACY
+// Preloader
 //////////
 (function($, APP) {
   APP.Plugins.Preloader = {

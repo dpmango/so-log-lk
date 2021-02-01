@@ -13,8 +13,8 @@ PageList:
     ready: 50
   - file: supply-done.html
     ready: 50
-  - file: supply-2.html
-    ready: 0
+  - file: supply-details.html
+    ready: 50
   - file: supply-3.html
     ready: 0
   - file: supply-4.html

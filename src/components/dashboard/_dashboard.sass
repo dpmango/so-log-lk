@@ -4,6 +4,11 @@
     padding: 25px 0 35px
   &__head
     display: flex
+    align-items: center
+  &__head-title
+    padding-right: 20px
+  &__head-cta
+    margin: 10px 0 10px auto
   &__filter
     margin-top: 20px
   &__supply
@@ -11,5 +16,48 @@
       margin-bottom: 30px
       &:last-child
         margin-bottom: 0
-
-
+  &__nav
+    position: relative
+    width: 100%
+    display: flex
+    align-items: center
+    margin: 20px 0 0
+    padding: 0 0 2px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      z-index: 1
+      bottom: 0px
+      left: 0
+      right: 0
+      background: #E4E4E4
+      height: 2px
+    li
+      flex: 0 0 auto
+      display: inline-block
+      margin-right: auto
+      &:last-child
+        margin-right: 0
+    a
+      position: relative
+      display: inline-block
+      padding: 5px
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        z-index: 2
+        bottom: -2px
+        left: 0
+        right: 100%
+        height: 2px
+        background: $colorPrimary
+        transition: all .25s $ease
+      &:hover
+        &::after
+          right: 0
+  li
+    &.is-active
+      a::after
+        right: 0

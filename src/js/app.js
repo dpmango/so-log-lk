@@ -68,6 +68,7 @@ let easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.Modals.init();
       APP.Plugins.Masks.init();
       APP.Plugins.Selectric.init();
+      APP.Plugins.Tabs.init(fromPjax);
       APP.Plugins.LazyLoadImages.init();
       APP.Plugins.TextareaAutoExpand.init();
       APP.Plugins.Validations.init();
