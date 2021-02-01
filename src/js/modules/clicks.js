@@ -44,6 +44,20 @@
         .on('click', '[js-show-grid]', function() {
           $(this).toggleClass('is-active');
           $('.demo-grid').fadeToggle();
+        })
+        .on('click', '.ui-pass-eye', function() {
+          var $input = $(this)
+            .closest('.ui-group')
+            .find('input');
+          var inputType = $input.attr('type');
+
+          $(this).toggleClass('is-active');
+
+          if (inputType === 'password') {
+            $input.attr('type', 'text');
+          } else {
+            $input.attr('type', 'password');
+          }
         });
     },
     destroy: function() {

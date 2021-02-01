@@ -36,6 +36,33 @@ textarea.ui-input
   resize: vertical
 
 
+// eye
+.ui-pass-eye
+  position: absolute
+  z-index: 2
+  right: 15px
+  bottom: 14px
+  cursor: pointer
+  &__wrapper
+    position: relative
+    size: 26px 22px
+    .ico
+      position: absolute
+      font-size: 22px
+      transition: color .25s $ease
+    .ico-mono-eye-closed
+      color: #ABABAB
+    .ico-mono-eye-opened
+      color: $fontColor
+      opacity: 0
+  &:hover
+    .ui-pass-eye__wrapper
+      .ico-mono-eye-closed
+        color: $fontColor
+      .ico-mono
+        color: #ABABAB
+
+
 // ui-dynamic-input
 .ui-dynamic-input
   position: relative

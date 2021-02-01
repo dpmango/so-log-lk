@@ -15,7 +15,10 @@
             .ui-group
               label(for="auth_pass") Пароль
               input.ui-input(type="password" name="pass" id="auth_pass" minlength="6" required)
-
+              .ui-pass-eye
+                .ui-pass-eye__wrapper
+                  +svgMono('eye-closed')
+                  +svgMono('eye-opened')
           .col.col-4.col-md-12
             .ui-group
               button(type="submit").btn.btn-primary Войти
