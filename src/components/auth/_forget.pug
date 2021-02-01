@@ -1,0 +1,17 @@
+// AUTH
+.auth
+  .container.container--6
+    .auth__wrapper
+      h3.auth__title.h3-title(data-aos="fade-down") Восстановление пароля
+
+      form.auth__form.js-validate-form(data-aos="fade" data-success-function="funcNameCallbackSucces")
+        .row
+          .col.col-8.col-md-12
+            .ui-group
+              label(for="auth_email") Введите свой e-mail, вам будет выслана ссылка для восстановления пароля
+              input.ui-input(type="email" name="email" id="auth_email" placeholder="my.email@companyname.com")
+
+          .col.col-4.col-md-12
+            .ui-group.mt-a
+              button(type="submit").btn.btn-primary Отправить
+

@@ -5,6 +5,8 @@ PageList:
     ready: 60
   - file: signup.html
     ready: 60
+  - file: forget.html
+    ready: 60
   - file: dashboard.html
     ready: 0
   - file: supply-1.html
