@@ -21,7 +21,11 @@
     }
   }
 }
-
+.dev-grid-sidebar {
+  .demo-grid {
+    left: 92px;
+  }
+}
 @include r($md) {
   .demo-grid {
     .col {

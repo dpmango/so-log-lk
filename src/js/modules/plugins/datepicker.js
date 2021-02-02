@@ -5,7 +5,7 @@
   APP.Plugins.DatePicker = {
     init: function (fromPjax) {
       if (!fromPjax) {
-        this.clickListeners();
+        this.eventListeners();
       }
       let $datepicker = $('.js-datepicker');
 
@@ -25,7 +25,7 @@
         });
       });
     },
-    clickListeners: function () {
+    eventListeners: function () {
       let _this = this;
     },
   };

@@ -5,7 +5,7 @@
   APP.Plugins.Tabs = {
     init: function (fromPjax) {
       if (!fromPjax) {
-        this.clickListeners();
+        this.eventListeners();
       }
       this.checkHash();
     },
@@ -28,7 +28,7 @@
         $tab.addClass('is-active');
       });
     },
-    clickListeners: function () {
+    eventListeners: function () {
       var _this = this;
       _document.on('click', '.js-tabs-nav a', function () {
         let $link = $(this);

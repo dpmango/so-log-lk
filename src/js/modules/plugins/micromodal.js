@@ -5,7 +5,7 @@
   APP.Plugins.MicroModal = {
     init: function (fromPjax) {
       if (!fromPjax) {
-        this.clickListeners();
+        this.eventListeners();
       }
       // https://micromodal.now.sh
       MicroModal.init({
@@ -23,7 +23,7 @@
         debugMode: false,
       });
     },
-    clickListeners: function () {
+    eventListeners: function () {
       // _document.on('click', '[data-custom-open]', function () {
       //   let modalName = $(this).data('custom-open');
       //   MicroModal.show(modalName);
@@ -31,6 +31,9 @@
       _document.on('click', '[data-micromodal-close]', function () {
         let modalName = $(this).closest('.modal').attr('id');
         MicroModal.close(modalName);
+      });
+      _document.on('click', '.modal__container', function (e) {
+        e.stopPropagation();
       });
     },
   };

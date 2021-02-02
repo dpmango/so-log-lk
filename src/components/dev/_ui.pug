@@ -1,0 +1,78 @@
+// .dev
+.dev(style="margin-top: 100px")
+  .container
+    // section
+    section.dev__section
+      h1.h1-title Типографика
+
+      .wysiwyg
+        h1.h1-title (.h1-title) Lorem Ipsum is simply dummy text
+        h2.h2-title (.h2-title) Lorem Ipsum is simply dummy text
+        h3.h3-title (.h3-title) Lorem Ipsum is simply dummy text
+        h4.h4-title (.h4-title) Lorem Ipsum is simply dummy text
+        h5.h5-title (.h5-title) Lorem Ipsum is simply dummy text
+
+        p.p-regular (.p-regular) Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        p.p-small (.p-small) Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+    // section
+    section.dev__section
+      h1.h1-title Кнопки
+
+      .dev-btns
+        a(href="#").btn.btn-primary Btn Primary
+        a(href='#').btn.btn-outline Btn outline
+
+    // section
+    section.dev__section
+      h1.h1-title Типовые компоненты (молекулы)
+
+    // section
+    section.dev__section
+      h1.h1-title svg icons
+      .dev-icons
+        +svgMono('arrow-right')
+        +svgMono('close-simple')
+        +svgMono('close')
+        +svgMono('calendar')
+        +svgMono('eye-closed')
+        +svgMono('eye-opened')
+        +svgMono('file-excel')
+        +svgMono('file-pdf')
+        +svgMono('file-word')
+        +svgMono('menu-1')
+        +svgMono('menu-2')
+        +svgMono('menu-3')
+        +svgMono('menu-4')
+        +svgMono('menu-5')
+        +svgMono('menu-6')
+        +svgMono('menu-7')
+        +svgMono('phone')
+        +svgMono('profile')
+
+
+      .dev-icons
+        +svgColor('logo')
+
+    // section
+    section.dev__section
+      h1.h1-title png icons
+      .dev-icons
+
+
+    // section
+    section.dev__section
+      h1.h1-title Интерфейс
+
+      // ui upload
+      .ui-upload.js-ui-upload(data-allowed-mime="image, application" data-max-size="5" data-upload-btn="[js-file-upload-btn]")
+        input(type="file" id="file")
+        label.ui-upload__trigger(for="file")
+          .btn.btn-outline.btn-outline--big.btn--block Выбрать файл
+        .ui-upload__info
+          .ui-upload__name
+          .ui-upload__close.js-upload-close
+            +svgMono('close-simple')
+
+        button(js-file-upload-btn type="submit" disabled).btn.btn-primary.btn--block Загрузить
+

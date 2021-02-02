@@ -1,10 +1,10 @@
 include ../utilities/_mixins
 doctype html
-html(lang="en")
+html(lang="ru")
   head
     include _head
 
-  body
+  body(class=bodyClass)
     // place where pjax bindings happen's
     #barba-wrapper
       block preloader
@@ -24,7 +24,8 @@ html(lang="en")
         block modals
           include ../../components/modals/_shared
 
-      include ../../components/demoGrid/_demoGrid
+      block dev
+        include ../../components/dev/demoGrid/_demoGrid
 
       block scripts
         include _scripts

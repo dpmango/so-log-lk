@@ -1,21 +1,21 @@
 //////////
 // Sidebar
 //////////
-(function($, APP) {
+(function ($, APP) {
   APP.Components.Sidebar = {
     data: {
       container: undefined,
       nav: undefined,
       menu: undefined,
     },
-    init: function(fromPjax) {
+    init: function (fromPjax) {
       if (!fromPjax) {
         this.onMount();
         // this.setPositions();
-        this.clickListeners();
+        this.eventListeners();
       }
     },
-    onMount: function() {
+    onMount: function () {
       let $container = $('.sidebar-global-container');
       let $nav = $('.js-sidebar-nav');
       let $menu = $('.js-sidebar-menu');
@@ -24,7 +24,7 @@
       this.data.nav = $nav;
       this.data.menu = $menu;
     },
-    clickListeners: function() {
+    eventListeners: function () {
       let _this = this;
 
       // show menu when hovered any nav's
@@ -33,7 +33,7 @@
 
       //TODO - add debounced function for mopuseout
       _document
-        .on('mouseenter', '.js-sidebar-nav a', function() {
+        .on('mouseenter', '.js-sidebar-nav a', function () {
           let $link = $(this);
           let $menu = _this.data.menu;
           let $container = _this.data.container;
@@ -49,7 +49,7 @@
           $menu.find('li[data-index="' + dataIndex + '"]').addClass('is-active');
         })
 
-        .on('mouseenter', '.js-sidebar-menu a', function() {
+        .on('mouseenter', '.js-sidebar-menu a', function () {
           let $link = $(this);
           let $nav = _this.data.nav;
           let $menu = _this.data.menu;
@@ -63,7 +63,7 @@
           $nav.find('li[data-index="' + dataIndex + '"]').addClass('is-active');
         })
 
-        .on('mouseleave', '.sidebar-global-container', function() {
+        .on('mouseleave', '.sidebar-global-container', function () {
           _this.data.menu.removeClass('is-active');
           _this.data.container.removeClass('is-active');
           _this.data.nav.find('li').removeClass('is-active');
