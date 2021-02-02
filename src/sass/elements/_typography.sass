@@ -98,6 +98,28 @@ p + p
 .table
   border-collapse: collapse
   width: 100%
+  caption
+    margin-top: 24px
+    margin-bottom: 16px
+    font-weight: normal
+    text-align: left
+    font-size: 24px
+    line-height: (34 / 24)
+  &:first-child
+    caption
+      margin-top: 0
+  td
+    a
+      color: $colorPrimary
+      text-decoration: underline
+      transition: color .15s $ease
+      &:hover
+        text-decoration: none
+        color: $fontColor
+    &.tcol-num
+      width: 65px
+    &.tcol-date
+      width: 125px
 
 .table--w-head
   thead
@@ -118,16 +140,6 @@ p + p
         padding-top: 30px
 
 .table--financial
-  caption
-    margin-top: 24px
-    margin-bottom: 16px
-    font-weight: normal
-    text-align: left
-    font-size: 24px
-    line-height: (34 / 24)
-  &:first-child
-    caption
-      margin-top: 0
   thead
     td
       font-weight: 500
@@ -168,3 +180,16 @@ p + p
       &.num-col
         width: 50px
         padding-right: 5px
+
+.table-file
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 0
+  .ico
+    font-size: 32px
+  span
+    display: inline-block
+    margin-left: 14px
+    font-size: 14px
+    color: $colorGray

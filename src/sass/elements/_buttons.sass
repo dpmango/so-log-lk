@@ -14,6 +14,11 @@ button
   cursor: pointer
   box-shadow: none
   transition: all $transitionSpeed $ease
+  &.disabled, &[disabled]
+    background: #E5E5E5
+    color: white
+    cursor: not-allowed
+    pointer-events: none
   &:focus, &:active
     outline: none
   &--block
@@ -35,12 +40,15 @@ button
   &-outline
     font-weight: 500
     font-size: 14px
-    line-height: 16px
+    line-height: (16 / 14)
     background: transparent
     color: $colorGray
     border: 1px solid $colorPrimary
     padding: 10px 30px
     border-radius: 4px
+    &--big
+      font-size: 16px
+      padding: 15px 25px
     &:hover
       background: $colorPrimary
       color: white
