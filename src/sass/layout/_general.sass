@@ -64,26 +64,11 @@ body, html
     // fixed container fix
     padding-top: 90px
 
-.container
-  // 1348
-  max-width: 1440px
-  width: 100%
-  margin-left: auto
-  margin-right: auto
-  padding-left: 60px
-  padding-right: 60px
-  &--6
-    max-width: 775px
-  &--sidebar
-    margin-left: 92px
-    max-width: calc(100% - 92px)
++r($lg)
+  .page
+    &__content
+      padding-top: 90px
 
-
-
-+r($sm)
-  .container
-    padding-left: 20px
-    padding-right: 20px
 
 // REMOVE FOR PRODUCTION !
 .dev-bp-debug

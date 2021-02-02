@@ -27,12 +27,35 @@ p + p
 
 // wysiwyg
 .wysiwyg
+  h1, h2, h3, h4, h5, h6
+    font-weight: normal
+  h1
+    font-size: 36px
+  h2
+    font-size: 32px
+  h3
+    font-size: 24px
+    line-height: (34 / 24)
+
   p
     font-size: 14px
     line-height: (24 / 14)
   strong
     font-weight: bold
     font-weight: 700
+  blockquote
+    padding: 20px
+    background: #FFFBD8
+    border-radius: 8px
+    font-size: 14px
+    line-height: (24 / 14)
+
+  p, ul, ol, blockquote, h1, h2, h3, h4, h5, h6, table
+    margin: 0
+    & + p, & + ul, & + ol, & + blockquote, & + table
+      margin: 1em 0
+    & + h1, & + h2, & + h3, & + h4, & + h5, & + h6,
+      margin-top: 2em
 
 +r($lg)
   .h1-title
@@ -66,3 +89,65 @@ p + p
 
 .tal
   text-align: left
+
+
+// tables
+.table
+  border-collapse: collapse
+  width: 100%
+
+.table--w-head
+  thead
+    td
+      background: $colorBg
+      border-radius: 2px
+      font-weight: 500
+      font-size: 16px
+      line-height: 30px
+      padding: 7px 15px
+  tbody
+    td
+      font-size: 14px
+      color: $colorGray
+      padding: 20px 15px
+    tr:first-child
+      td
+        padding-top: 30px
+
+.table--financial
+  caption
+    margin-top: 24px
+    margin-bottom: 16px
+    font-weight: normal
+    text-align: left
+    font-size: 24px
+    line-height: (34 / 24)
+  thead
+    td
+      font-weight: 500
+      font-size: 16px
+      line-height: (30 / 16)
+      color: $fontColor
+      border: 2px solid #000
+      padding: 3px 15px
+      &:first-child
+        border-left: 0
+      &:last-child
+        border-right: 0
+  tbody
+    td
+      font-size: 14px
+      color: $colorGray
+      border: 1px solid #E5E5E5
+      padding: 8px 15px
+      &:first-child
+        border-left: 0
+      &:last-child
+        border-right: 0
+  tr
+    &:first-child
+      td
+        border-top: 2px solid #000
+    &:last-child
+      td
+        border-bottom: 2px solid #000

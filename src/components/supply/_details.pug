@@ -12,18 +12,18 @@
       .dash__content.js-tabs
         ul.dash__nav.js-tabs-nav
           li.is-active
-            a(href="#tab-1") Трекинг партии поставки
+            a(href="#tracking") Трекинг партии поставки
           li
-            a(href="#tab-2") Информация по поставке
+            a(href="#info") Информация по поставке
           li
-            a(href="#tab-4") Счета по поставке
+            a(href="#bills") Счета по поставке
           li
-            a(href="#tab-5") Документы по поставке
+            a(href="#docs") Документы по поставке
           li
-            a(href="#tab-6") Расчеты с поставщиками
+            a(href="#suppliers") Расчеты с поставщиками
 
 
-        .js-tab.mt-2(data-tab="tab-1" style="display: block")
+        .js-tab.mt-2(data-tab="tracking" style="display: block")
           // .supply-details
           .supply-details.panel
             .supply-details__scope
@@ -45,19 +45,137 @@
                   td.f-500 Транспорт матрица 55
 
 
-        .js-tab.mt-2(data-tab="tab-2")
+        .js-tab.mt-2(data-tab="info")
           // .supply-details
           .supply-details.panel
             .supply-details__info
-              .supply-details__note
-                .wysiwyg
-                  p ВНИМАНИЕ: Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
+              .wysiwyg.tac
+                p <span class="c-primary">ВНИМАНИЕ:</span> Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
+                blockquote Товар подлежит подлежит сертификации или ДС, обязательно наличие маркировки ЕАС. Требуется представление разрешительной документации!
+              .wysiwyg.mt-2
+                h3 Список товара, на который требуется разрешительная документация:
 
+                table.table.table--w-head
+                  thead
+                    tr
+                      td Наименование товара
+                      td Вид разрешительной документации
+                  tbody
+                    tr
+                      td Наименование товара
+                      td Вид разрешительной документации товара
+                    tr
+                      td Длинное наименование товара
+                      td Вид разрешительной документации длинное наименование товара
+                    tr
+                      td Наименование товара
+                      td Вид разрешительной документации наименование товара
 
-        .js-tab.mt-2(data-tab="tab-3")
+          // .supply-details
+          .supply-details.panel
+            .supply-details__info
+              .wysiwyg
+                table.table.table--financial
+                  caption Параметры запроса
+                  tr
+                    td Тип запрашиваемой услуги
+                    td ТО+ТЭО
+                  tr
+                    td Краткое описание товара
+                    td электроника
+                  tr
+                    td Стоимость груза
+                    td 31 389.25 EUR
+                  tr
+                    td Класс опасности
+                    td
+                  tr
+                    td Суммарный заявленный объём, м.куб
+                    td 1.536
+                  tr
+                    td Суммарная заявленная масса брутто, кг
+                    td 1063
+                  tr
+                    td Заявленное количество мест
+                    td 6
+                  tr
+                    td Условия поставки (Инкотерм-2010)
+                    td EXW
+                  tr
+                    td Пункт отправления
+                    td Готтмадинген
+                  tr
+                    td Пункт назначения
+                    td Волоколамск
+                  tr
+                    td Таможенный пост
+                    td Волоколамский пост
+                  tr
+                    td Таможенный режим
+                    td Импорт
+                  tr
+                    td Тип перевозки
+                    td Авто
 
-        .js-tab.mt-2(data-tab="tab-4")
+                //- h3 Услуги и стоимость
+                table.table.table--financial
+                  caption Услуги и стоимость
+                  thead
+                    tr
+                      td(rowspan="2") №
+                      td(rowspan="2") Наименование услуги
+                      td(rowspan="2") Описание услуги
+                      td(colspan="2") Стоимость
+                    tr
+                      td Значение
+                      td Валюта
+                  tr
+                    td(rowspan="4") 1
+                    td(rowspan="4") Фрахт
+                    td Авто доставка до консолидационного склада
+                    td 500.00
+                    td EUR
+                  tr
+                    td Авто доставка от консолидационного склада
+                    td 100.45
+                    td EUR
+                  tr
+                    td Страховка
+                    td 550.00
+                    td EUR
+                  tr
+                    td Оформление документов
+                    td 80.00
+                    td EUR
+                  tr
+                    td(rowspan="2") 2
+                    td(rowspan="2") Брокер
+                    td Автоперевозка по Москве
+                    td 13 000.00
+                    td RUB
+                  tr
+                    td Таможенное оформление за печатью брокера
+                    td 6 000.00
+                    td RUB
+                  tr
+                    td(rowspan="3") 3
+                    td(rowspan="3") Таможенные пошлины
+                    td Таможенная пошлина
+                    td 22 000.00
+                    td EUR
+                  tr
+                    td Таможенный НДС
+                    td 2 354.19
+                    td EUR
+                  tr
+                    td Таможенный сбор
+                    td 12 000.00
+                    td RUB
 
-        .js-tab.mt-2(data-tab="tab-5")
+        .js-tab.mt-2(data-tab="bills")
 
-        .js-tab.mt-2(data-tab="tab-6")
+        .js-tab.mt-2(data-tab="bills")
+
+        .js-tab.mt-2(data-tab="docs")
+
+        .js-tab.mt-2(data-tab="suppliers")

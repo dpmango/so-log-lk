@@ -72,7 +72,6 @@
         color: $colorPrimary
         &:hover
           color: $colorGray
-
   &__contact-icon
     display: none
     font-size: 0
@@ -106,6 +105,8 @@
 
 +r($lg)
   .header
+    &__wrapper
+      padding: 10px 30px 9px
     &__logo
       .ico
         font-size: 32px
@@ -129,5 +130,15 @@
 
 +r($sm)
   .header
+    &__wrapper
+      padding: 3px 20px
     &__logo
-      font-size: 30px
+      .ico
+        font-size: 24px
+    &__hamburger
+      padding-left: 5px
+      transform: scale(0.8)
+      transform-origin: right center
+    &__contact-icon
+      .ico
+        font-size: 24px
