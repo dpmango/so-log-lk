@@ -1,0 +1,52 @@
+include ../profile/_mixins
+
+// Dashboard
+.dash
+  .container.container--sidebar
+    .dash__wrapper
+      // head
+      .dash__head(data-aos="fade-up")
+        .h1-title.dash__head-title Профиль
+
+      // tabs content
+      .dash__content.js-tabs(data-aos="fade-up")
+        ul.dash__nav.dash__nav--width-auto.js-tabs-nav
+          li.is-active
+            a(href="#tracking") Контакты
+          li
+            a(href="#info") Данные
+
+        // NEXT TAB (TRACKING)
+        .js-tab.mt-2(data-tab="tracking" style="display: block")
+          // .profile
+          .profile.panel
+            .profile__wrapper
+              .row
+                .col.col-6.col-md-12
+                  +profileContact({
+                    title: 'Персональный менеджер',
+                    tag: 'Заменяющий менеджер',
+                    name: 'Валуев Владимир',
+                    email: 'v.valuev@so-logistics.ru'
+                  })
+                .col.col-6.col-md-12
+                  +profileContact({
+                    title: 'Бухгалтер по работе с клиентами',
+                    name: 'Разгулина Кристина',
+                    email: 'k.razgulina@so-logistics.ru'
+                  })
+                .col.col-6.col-md-12
+                  +profileContact({
+                    title: 'Руководитель отдела продаж',
+                    name: 'Малинкин Александр',
+                    email: 'a.malinkin@so-logistics.ru'
+                  })
+
+        // NEXT TAB (INFO)
+        .js-tab.mt-2(data-tab="info")
+          // .supply-details
+          .supply-details.panel(data-aos="fade")
+            .supply-details__info
+              .wysiwyg.tac
+                p <span class="c-primary">ВНИМАНИЕ:</span> Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
+                blockquote Товар подлежит подлежит сертификации или ДС, обязательно наличие маркировки ЕАС. Требуется представление разрешительной документации!

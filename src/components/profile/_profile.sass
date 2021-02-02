@@ -1,0 +1,46 @@
+// Profile
+.profile-contact
+  margin-bottom: 20px
+  &__head
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    .h3-title
+      margin-right: 15px
+  &__name
+    margin-top: 16px
+    font-weight: 500
+    font-size: 16px
+    line-height: 1.4
+  &__tag
+    font-size: 14px
+    line-height: 1.42
+    background: #E8F4FF
+    border-radius: 2px
+    padding: 8px 15px
+  &__list
+    margin-top: 2px
+
+  &__element
+    font-size: 14px
+    line-height: 30px
+    color: $colorGray
+    span
+      display: inline-block
+      min-width: 95px
+    > a
+      color: $colorPrimary
+      transition: color .25s $ease
+      &:hover
+        color: $fontColor
+
+  &__phone
+    display: inline-flex
+    align-items: center
+    span
+      display: inline-block
+      min-width: 1px
+      color: $colorGray
+      margin-right: 12px
+    .ico
+      font-size: 16px
