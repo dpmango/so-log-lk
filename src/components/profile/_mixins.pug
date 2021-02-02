@@ -7,15 +7,18 @@ mixin profileContact(props)
       if props.tag
         .profile-contact__tag!= props.tag
     .profile-contact__name!= props.name
-    .profile-contact__list
-      .profile-contact__element Email: <a href="mailto:v.valuev@so-logistics.ru"> #{props.email}</a>
-      .profile-contact__element
-        span Мобильный:
-        a(href="tel:+79165540310").profile-contact__phone
-          span +7 (916) 554-03-10
-          +svgMono('phone-out')
-      .profile-contact__element
-        span Рабочий:
-        a(href="tel:+74955500550").profile-contact__phone
-          span + 7 (495) 550-05-50
-          +svgMono('phone-out')
+
+    if props.email
+      .profile-contact__list
+        .profile-contact__element Email: <a href="mailto:v.valuev@so-logistics.ru"> #{props.email}</a>
+        .profile-contact__element
+          span Мобильный:
+          a(href="tel:+79165540310").profile-contact__phone
+            span +7 (916) 554-03-10
+            +svgMono('phone-out')
+        .profile-contact__element
+          span Рабочий:
+          a(href="tel:+74955500550").profile-contact__phone
+            span + 7 (495) 550-05-50
+            +svgMono('phone-out')
+

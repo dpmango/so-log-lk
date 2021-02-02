@@ -1,13 +1,13 @@
 // Animations variables
-$aos-distance: 20px !default;
+$aos-distance: 10px !default;
 
 @media screen {
   html:not(.no-js) {
     /**
     * Fade animations:
     * fade
-    * fade-up, fade-down, fade-left, fade-right
-    * fade-up-right, fade-up-left, fade-down-right, fade-down-left
+    * fade-up, fade-up, fade-left, fade-right
+    * fade-up-right, fade-up-left, fade-up-right, fade-up-left
     */
 
     [data-aos^='fade'][data-aos^='fade'] {
@@ -44,16 +44,13 @@ $aos-distance: 20px !default;
     //   transform: translate3d($aos-distance, $aos-distance, 0);
     // }
     //
-    // [data-aos='fade-down-right'] {
+    // [data-aos='fade-up-right'] {
     //   transform: translate3d(-$aos-distance, -$aos-distance, 0);
     // }
     //
-    // [data-aos='fade-down-left'] {
+    // [data-aos='fade-up-left'] {
     //   transform: translate3d($aos-distance, -$aos-distance, 0);
     // }
-
-
-
 
     /**
     * Zoom animations:
@@ -111,9 +108,6 @@ $aos-distance: 20px !default;
     //   transform: translate3d($aos-distance, 0, 0) scale(1.2);
     // }
 
-
-
-
     /**
     * Slide animations
     */
@@ -143,9 +137,6 @@ $aos-distance: 20px !default;
     // [data-aos='slide-left'] {
     //   transform: translate3d(100%, 0, 0);
     // }
-
-
-
 
     /**
     * Flip animations:

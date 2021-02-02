@@ -5,19 +5,19 @@ include ../profile/_mixins
   .container.container--sidebar
     .dash__wrapper
       // head
-      .dash__head(data-aos="fade-up")
+      .dash__head(data-aos="fade")
         .h1-title.dash__head-title Профиль
 
       // tabs content
-      .dash__content.js-tabs(data-aos="fade-up")
+      .dash__content.js-tabs(data-aos="fade")
         ul.dash__nav.dash__nav--width-auto.js-tabs-nav
           li.is-active
-            a(href="#tracking") Контакты
+            a(href="#contacts") Контакты
           li
-            a(href="#info") Данные
+            a(href="#data") Данные
 
         // NEXT TAB (TRACKING)
-        .js-tab.mt-2(data-tab="tracking" style="display: block")
+        .js-tab.mt-2(data-tab="contacts" style="display: block")
           // .profile
           .profile.panel
             .profile__wrapper
@@ -43,10 +43,23 @@ include ../profile/_mixins
                   })
 
         // NEXT TAB (INFO)
-        .js-tab.mt-2(data-tab="info")
-          // .supply-details
-          .supply-details.panel(data-aos="fade")
-            .supply-details__info
-              .wysiwyg.tac
-                p <span class="c-primary">ВНИМАНИЕ:</span> Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
-                blockquote Товар подлежит подлежит сертификации или ДС, обязательно наличие маркировки ЕАС. Требуется представление разрешительной документации!
+        .js-tab.mt-2(data-tab="data")
+          // .profile
+          .profile.panel
+            .profile__wrapper
+              .row
+                .col.col-6.col-md-12
+                  +profileContact({
+                    title: 'Наименование организации',
+                    name: 'ООО «Ремстрой Технологии»',
+                  })
+                .col.col-6.col-md-12
+                  +profileContact({
+                    title: 'Действующий договор',
+                    name: 'Договор на оказание услуг №0031236-0997 от 12.07.2020',
+                  })
+                .col.col-6.col-md-12
+                  +profileContact({
+                    title: 'ФИО ответственного лица',
+                    name: 'Гаджиева Магрипа Харипуллаевна',
+                  })

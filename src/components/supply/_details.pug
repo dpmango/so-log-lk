@@ -3,14 +3,14 @@
   .container.container--sidebar
     .dash__wrapper
       // head
-      .dash__head(data-aos="fade-up")
+      .dash__head(data-aos="fade")
         .h1-title.dash__head-title Поставка №0000015677
         .dash__head-cta
           a(href="#").btn.btn-outline Вернуться в текущие поставки
 
       // tabs content
-      .dash__content.js-tabs(data-aos="fade-up")
-        ul.dash__nav.js-tabs-nav
+      .dash__content.js-tabs
+        ul.dash__nav.js-tabs-nav(data-aos="fade")
           li.is-active
             a(href="#tracking") Трекинг партии поставки
           li
@@ -48,8 +48,8 @@
         // NEXT TAB (INFO)
         .js-tab.mt-2(data-tab="info")
           // .supply-details
-          .supply-details.panel(data-aos="fade")
-            .supply-details__info
+          .supply-details.panel
+            .supply-details__info(data-aos="fade")
               .wysiwyg.tac
                 p <span class="c-primary">ВНИМАНИЕ:</span> Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
                 blockquote Товар подлежит подлежит сертификации или ДС, обязательно наличие маркировки ЕАС. Требуется представление разрешительной документации!
