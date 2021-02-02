@@ -23,6 +23,7 @@
             a(href="#suppliers") Расчеты с поставщиками
 
 
+        // NEXT TAB (TRACKING)
         .js-tab.mt-2(data-tab="tracking" style="display: block")
           // .supply-details
           .supply-details.panel
@@ -45,6 +46,7 @@
                   td.f-500 Транспорт матрица 55
 
 
+        // NEXT TAB (INFO)
         .js-tab.mt-2(data-tab="info")
           // .supply-details
           .supply-details.panel
@@ -172,10 +174,65 @@
                     td 12 000.00
                     td RUB
 
+                table.table.table--financial
+                  caption Итоговая стоимость
+                  thead
+                    tr
+                      td №
+                      td Наименование услуги
+                      td USD
+                      td RUB
+                      td EUR
+                      td В валюте груза
+                  tbody
+                    tr
+                      td 1
+                      td Фрахт
+                      td 0.00
+                      td 13 000.00
+                      td 1 230.45
+                      td 13 000.00
+                    tr
+                      td 2
+                      td Брокер
+                      td 0.00
+                      td 28 000.00
+                      td 0.00
+                      td 28 000.00
+                    tr
+                      td 3
+                      td Таможенные пошлины
+                      td 0.00
+                      td 38 000.00
+                      td 0.00
+                      td 38 000.00
+
+                table.table.table--financial
+                  caption Логистический маршрут
+                  thead
+                    tr
+                      td №
+                      td Пункт отправления
+                      td Пункт назначения
+                  tbody
+                    tr
+                      td 1
+                      td Нингбо
+                      td Владивосток-Экспорт
+                    tr
+                      td 2
+                      td Владивосток-Экспорт
+                      td Силикатная
+                    tr
+                      td 3
+                      td Силикатная
+                      td Нижний Новгород
+
+        // NEXT TAB (BILLS)
         .js-tab.mt-2(data-tab="bills")
 
-        .js-tab.mt-2(data-tab="bills")
-
+        // NEXT TAB (DOCS)
         .js-tab.mt-2(data-tab="docs")
 
+        // NEXT TAB (SUPPLIERS)
         .js-tab.mt-2(data-tab="suppliers")
