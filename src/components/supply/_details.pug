@@ -49,7 +49,7 @@
         // NEXT TAB (INFO)
         .js-tab.mt-2(data-tab="info")
           // .supply-details
-          .supply-details.panel
+          .supply-details.panel(data-aos="fade")
             .supply-details__info
               .wysiwyg.tac
                 p <span class="c-primary">ВНИМАНИЕ:</span> Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
@@ -77,7 +77,7 @@
           .supply-details.panel
             .supply-details__info
               .wysiwyg
-                table.table.table--financial
+                table.table.table--financial(data-aos="fade")
                   caption Параметры запроса
                   tr
                     td Тип запрашиваемой услуги
@@ -120,116 +120,181 @@
                     td Авто
 
                 //- h3 Услуги и стоимость
-                table.table.table--financial
+                table.table.table--financial(data-aos="fade")
                   caption Услуги и стоимость
                   thead
                     tr
-                      td(rowspan="2") №
+                      td.tac(rowspan="2") №
                       td(rowspan="2") Наименование услуги
                       td(rowspan="2") Описание услуги
-                      td(colspan="2") Стоимость
+                      td.tac(colspan="2") Стоимость
                     tr
-                      td Значение
-                      td Валюта
+                      td.tac Значение
+                      td.tac Валюта
                   tr
-                    td(rowspan="4") 1
+                    td.tac(rowspan="4") 1
                     td(rowspan="4") Фрахт
-                    td Авто доставка до консолидационного склада
-                    td 500.00
-                    td EUR
+                    td.pl-20 Авто доставка до консолидационного склада
+                    td.tar 500.00
+                    td.tac EUR
                   tr
-                    td Авто доставка от консолидационного склада
-                    td 100.45
-                    td EUR
+                    td.pl-20 Авто доставка от консолидационного склада
+                    td.tar 100.45
+                    td.tac EUR
                   tr
-                    td Страховка
-                    td 550.00
-                    td EUR
+                    td.pl-20 Страховка
+                    td.tar 550.00
+                    td.tac EUR
                   tr
-                    td Оформление документов
-                    td 80.00
-                    td EUR
+                    td.pl-20 Оформление документов
+                    td.tar 80.00
+                    td.tac EUR
                   tr
-                    td(rowspan="2") 2
+                    td.tac(rowspan="2") 2
                     td(rowspan="2") Брокер
-                    td Автоперевозка по Москве
-                    td 13 000.00
-                    td RUB
+                    td.pl-20 Автоперевозка по Москве
+                    td.tar 13 000.00
+                    td.tac RUB
                   tr
-                    td Таможенное оформление за печатью брокера
-                    td 6 000.00
-                    td RUB
+                    td.pl-20 Таможенное оформление за печатью брокера
+                    td.tar 6 000.00
+                    td.tac RUB
                   tr
-                    td(rowspan="3") 3
+                    td.tac(rowspan="3") 3
                     td(rowspan="3") Таможенные пошлины
-                    td Таможенная пошлина
-                    td 22 000.00
-                    td EUR
+                    td.pl-20 Таможенная пошлина
+                    td.tar 22 000.00
+                    td.tac EUR
                   tr
-                    td Таможенный НДС
-                    td 2 354.19
-                    td EUR
+                    td.pl-20 Таможенный НДС
+                    td.tar 2 354.19
+                    td.tac EUR
                   tr
-                    td Таможенный сбор
-                    td 12 000.00
-                    td RUB
+                    td.pl-20 Таможенный сбор
+                    td.tar 12 000.00
+                    td.tac RUB
 
-                table.table.table--financial
+                // table
+                table.table.table--financial(data-aos="fade")
                   caption Итоговая стоимость
                   thead
                     tr
-                      td №
+                      td.tac.num-col №
                       td Наименование услуги
-                      td USD
-                      td RUB
-                      td EUR
-                      td В валюте груза
+                      td.tac USD
+                      td.tac RUB
+                      td.tac EUR
+                      td.tac В валюте груза
                   tbody
                     tr
-                      td 1
+                      td.tac.num-col 1
                       td Фрахт
-                      td 0.00
-                      td 13 000.00
-                      td 1 230.45
-                      td 13 000.00
+                      td.tac 0.00
+                      td.tac 13 000.00
+                      td.tac 1 230.45
+                      td.tac 13 000.00
                     tr
-                      td 2
+                      td.tac 2
                       td Брокер
-                      td 0.00
-                      td 28 000.00
-                      td 0.00
-                      td 28 000.00
+                      td.tac 0.00
+                      td.tac 28 000.00
+                      td.tac 0.00
+                      td.tac 28 000.00
                     tr
-                      td 3
+                      td.tac.num-col 3
                       td Таможенные пошлины
-                      td 0.00
-                      td 38 000.00
-                      td 0.00
-                      td 38 000.00
+                      td.tac 0.00
+                      td.tac 38 000.00
+                      td.tac 0.00
+                      td.tac 38 000.00
 
-                table.table.table--financial
+                // table
+                table.table.table--financial(data-aos="fade")
                   caption Логистический маршрут
                   thead
                     tr
-                      td №
+                      td.tac.num-col №
                       td Пункт отправления
                       td Пункт назначения
                   tbody
                     tr
-                      td 1
+                      td.tac.num-col 1
                       td Нингбо
                       td Владивосток-Экспорт
                     tr
-                      td 2
+                      td.tac.num-col 2
                       td Владивосток-Экспорт
                       td Силикатная
                     tr
-                      td 3
+                      td.tac.num-col 3
                       td Силикатная
                       td Нижний Новгород
 
         // NEXT TAB (BILLS)
         .js-tab.mt-2(data-tab="bills")
+          // .supply-details
+          .supply-details.panel
+            .supply-details__info
+              .wysiwyg
+                table.table.table--financial
+                  caption Выставленные счета
+                  thead.tac
+                    tr
+                      td(colspan="4") Счета на оплату
+                      td(colspan="3") Поступление оплаты
+                      td.tac Задолжность
+                      td(colspan="3") Реализация
+                    tr
+                      td Номер
+                      td Дата
+                      td Сумма
+                      td Валюта
+                      td Дата
+                      td Сумма, руб.
+                      td Сумма, вал.
+                      td
+                      td Номер
+                      td Дата
+                      td Сумма, вал.
+                  tbody
+                    each group in [1,2,3,4,5]
+                      tr
+                        td СОСчт-00000881
+                        td 21.12.20
+                        td 49 000.00
+                        td.tac RUB
+                        td
+                        td
+                        td
+                        td
+                        td
+                        td
+                        td
+                      tr
+                          td
+                          td
+                          td
+                          td
+                          td 21.12.20
+                          td.tac 49 000.00
+                          td.tac 00.00
+                          td
+                          td СОСчт-00000881
+                          td 21.12.20
+                          td.tac 00.00
+                      tr
+                        td
+                        td
+                        td
+                        td
+                        td 21.12.20
+                        td
+                        td
+                        td
+                        td
+                        td
+                        td
+
 
         // NEXT TAB (DOCS)
         .js-tab.mt-2(data-tab="docs")
