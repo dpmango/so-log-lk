@@ -8,8 +8,11 @@ header.header
     .header__actions
       .header__contacts
         .header__contact
-          a(href="tel:74950250022") +7 (495) 025-00-22
-        .header__contact
+          a(href="tel:74950250022")
+            span +7 (495) 025-00-22
+            i.header__contact-icon
+              +svgMono('phone')
+        .header__contact.header__contact--desktop
           a(href="mailto:info@so-logistics.ru") info@so-logistics.ru
 
       a(href="#").header__action
@@ -23,10 +26,10 @@ header.header
         span.header__action-text Выйти
 
       .header__hamburger
-        .hamburger.hamburger--squeeze(js-hamburger)
-          .hamburger-box
-            .hamburger-inner
-
+        .hamburger.js-hamburger
+          span
+          span
+          span
 
 // MOBILE NAVI
 .mobile-navi

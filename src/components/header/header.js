@@ -17,7 +17,7 @@
     init: function(fromPjax) {
       if (!fromPjax) {
         // this.getHeaderParams();
-        // this.hamburgerClickListener();
+        this.hamburgerClickListener();
         // this.listenScroll();
         // this.listenResize();
       }
@@ -32,18 +32,18 @@
         bottomPoint: headerHeight,
       };
     },
-    // hamburgerClickListener: function() {
-    //   _document.on('click', '[js-hamburger]', function() {
-    //     $(this).toggleClass('is-active');
-    //     $('.mobile-navi').toggleClass('is-active');
+    hamburgerClickListener: function() {
+      _document.on('click', '.js-hamburger', function() {
+        $(this).toggleClass('is-active');
+        $('.mobile-navi').toggleClass('is-active');
 
-    //     if ($(this).is('.is-active')) {
-    //       APP.Plugins.ScrollBlock.disableScroll();
-    //     } else {
-    //       APP.Plugins.ScrollBlock.enableScroll();
-    //     }
-    //   });
-    // },
+        if ($(this).is('.is-active')) {
+          APP.Plugins.ScrollBlock.disableScroll();
+        } else {
+          APP.Plugins.ScrollBlock.enableScroll();
+        }
+      });
+    },
     // listenScroll: function() {
     //   _window.on('scroll', this.scrollHeader.bind(this));
     //   _window.on('scroll', debounce(this.scrollHeaderDebouce.bind(this), 1250, { trailing: true }));

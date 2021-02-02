@@ -21,6 +21,7 @@
     font-size: 0
     .ico
       font-size: 52px
+      transition: font-size .15s $ease
 
   &__actions
     margin-left: auto
@@ -72,6 +73,13 @@
         &:hover
           color: $colorGray
 
+  &__contact-icon
+    display: none
+    font-size: 0
+    transform: translateY(2px) // TODO
+    color: $colorPrimary
+    .ico
+      font-size: 28px
 
   &__hamburger
     display: none
@@ -98,14 +106,26 @@
 
 +r($lg)
   .header
-    &__cta
+    &__logo
+      .ico
+        font-size: 32px
+    &__contact
+      &--desktop
+        display: none
+      &::after
+        display: none
+      span
+        display: none
+    &__contact-icon
+      display: inline-block
+    &__action
       display: none
+    &__hamburger
+      display: block
 
 +r($md)
   .header
-    &__hamburger
-      margin-left: auto
-      display: block
+
 
 +r($sm)
   .header
