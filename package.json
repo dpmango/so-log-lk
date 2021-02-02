@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-      "npm test",
+      "node_modules/.bin/eslint . --fix",
       "git add"
     ]
   },
