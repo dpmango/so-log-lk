@@ -17,11 +17,13 @@ include ../supply/_mixins
             label(for="dash_filter_1") Дата завершения
             .row
               .col.col-6
-                input.ui-input.js-datepicker(type="date" id="dash_filter_2")
-                +svgMono('calendar')
+                .ui-input-iconed
+                  input.ui-input.js-datepicker(type="date" id="dash_filter_2")
+                  +svgMono('calendar')
               .col.col-6
-                input.ui-input.js-datepicker(type="date" id="dash_filter_3")
-                +svgMono('calendar')
+                .ui-input-iconed
+                  input.ui-input.js-datepicker(type="date" id="dash_filter_3")
+                  +svgMono('calendar')
 
         .col.col-3
           .ui-group
