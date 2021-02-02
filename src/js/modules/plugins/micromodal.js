@@ -20,7 +20,7 @@
         disableFocus: false,
         awaitOpenAnimation: false,
         awaitCloseAnimation: false,
-        debugMode: true,
+        debugMode: false,
       });
     },
     clickListeners: function () {

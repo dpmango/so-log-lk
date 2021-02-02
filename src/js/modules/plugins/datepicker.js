@@ -1,9 +1,9 @@
 //////////
 // DatePicker
 //////////
-(function($, APP) {
+(function ($, APP) {
   APP.Plugins.DatePicker = {
-    init: function(fromPjax) {
+    init: function (fromPjax) {
       if (!fromPjax) {
         this.clickListeners();
       }
@@ -26,17 +26,16 @@
       }
 
       // initialization
-      $datepicker.each(function(i, picker) {
+      $datepicker.each(function (i, picker) {
         let $picker = $(picker);
 
         $picker.datepicker({
-          language: 'en',
-          inline: true,
-          minDate: new Date(),
+          language: 'ru',
+          inline: false,
           // range: true,
           firstDay: 1,
           minView: 'days',
-          onRenderCell: function(date, cellType) {
+          onRenderCell: function (date, cellType) {
             if (cellType === 'day') {
               let cellDates = {
                 day: date.getDate(),
@@ -51,7 +50,7 @@
                 let $lastCell = $hovered.last();
 
                 // add classes
-                $hovered.each(function(i, cell) {
+                $hovered.each(function (i, cell) {
                   classes += compareDates(cellDates, $(cell), '-selected-');
                 });
 
@@ -65,14 +64,14 @@
               };
             }
           },
-          onSelect: function(formattedDate, date, inst) {
+          onSelect: function (formattedDate, date, inst) {
             inst.$el.blur();
             $.modal.close();
           },
         });
       });
     },
-    addFocusClasses: function($curCell, withRange) {
+    addFocusClasses: function ($curCell, withRange) {
       // clear
       let selectedRange = 4;
       let $rangeCells = $curCell.nextAll().slice(0, selectedRange - 1);
@@ -82,23 +81,23 @@
       $curCell.addClass('-hovered-').addClass('-range-from-hover-');
       $lastCell.addClass('-range-to-hover-');
     },
-    clearFocusClasses: function(withRange) {
+    clearFocusClasses: function (withRange) {
       $('.datepicker--cell')
         .removeClass('-hovered-')
         .removeClass('-range-from-hover-')
         .removeClass('-range-to-hover-');
     },
-    clickListeners: function() {
+    clickListeners: function () {
       let _this = this;
 
       // adds only hover classes, clear every time
       _document
-        .on('mouseenter', '.datepicker--cell', function() {
+        .on('mouseenter', '.datepicker--cell', function () {
           let $curCell = $(this);
           if ($curCell.is('.-disabled-')) return;
           _this.addFocusClasses($curCell);
         })
-        .on('mouseleave', '.datepicker--cell', function() {
+        .on('mouseleave', '.datepicker--cell', function () {
           _this.clearFocusClasses();
         });
     },
