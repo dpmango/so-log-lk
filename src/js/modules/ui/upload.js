@@ -9,7 +9,7 @@
       }
     },
     eventListeners: function () {
-      var _this = this;
+      const _this = this;
       _document
         .on('change', '.js-ui-upload', function (e) {
           const $container = $(this);
