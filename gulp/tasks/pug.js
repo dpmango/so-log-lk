@@ -6,7 +6,7 @@ import gulpif from 'gulp-if';
 import frontMatter from 'gulp-front-matter';
 import config from '../config';
 
-const renderHtml = onlyChanged =>
+const renderHtml = (onlyChanged) =>
   gulp
     .src([config.src.templates + '/[^_]*.pug'])
     .pipe(plumber({ errorHandler: config.errorHandler }))

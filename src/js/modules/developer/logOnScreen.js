@@ -1,6 +1,6 @@
-(function($, APP) {
+(function ($, APP) {
   APP.Dev.LogOnScreen = {
-    showLog: function(message) {
+    showLog: function (message) {
       let wHost = window.location.host.toLowerCase();
       let displayCondition =
         wHost.indexOf('localhost') >= 0 ||
@@ -10,10 +10,10 @@
         let content = "<div class='dev-bp-debug'>" + message + '</div>';
 
         $('.page').append(content);
-        setTimeout(function() {
+        setTimeout(function () {
           $('.dev-bp-debug').fadeOut();
         }, 1000);
-        setTimeout(function() {
+        setTimeout(function () {
           $('.dev-bp-debug').remove();
         }, 1500);
       }

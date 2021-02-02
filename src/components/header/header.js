@@ -1,7 +1,7 @@
 //////////
 // HEADER
 //////////
-(function($, APP) {
+(function ($, APP) {
   APP.Components.Header = {
     data: {
       classes: {
@@ -14,7 +14,7 @@
         bottomPoint: undefined,
       },
     },
-    init: function(fromPjax) {
+    init: function (fromPjax) {
       if (!fromPjax) {
         // this.getHeaderParams();
         this.hamburgerClickListener();
@@ -22,7 +22,7 @@
         // this.listenResize();
       }
     },
-    getHeaderParams: function() {
+    getHeaderParams: function () {
       let $header = $('.header');
       let headerOffsetTop = 0;
       let headerHeight = $header.outerHeight() + headerOffsetTop;
@@ -32,8 +32,8 @@
         bottomPoint: headerHeight,
       };
     },
-    hamburgerClickListener: function() {
-      _document.on('click', '.js-hamburger', function() {
+    hamburgerClickListener: function () {
+      _document.on('click', '.js-hamburger', function () {
         $(this).toggleClass('is-active');
         $('.mobile-navi').toggleClass('is-active');
 
@@ -51,12 +51,12 @@
     // listenResize: function() {
     //   _window.on('resize', debounce(this.getHeaderParams.bind(this), 100));
     // },
-    makeHeaderVisible: function() {
+    makeHeaderVisible: function () {
       this.data.header.container.addClass(this.data.classes.visibleClass);
       $('body').addClass(this.data.classes.bodyFixedVisible);
       this.data.header.isFixedVisible = true;
     },
-    makeHeaderHidden: function() {
+    makeHeaderHidden: function () {
       this.data.header.container.removeClass(this.data.classes.visibleClass);
       $('body').removeClass(this.data.classes.bodyFixedVisible);
       this.data.header.isFixedVisible = false;

@@ -3,9 +3,9 @@
 // jQuery validate plugin https://jqueryvalidation.org
 ////////////////
 
-(function($, APP) {
+(function ($, APP) {
   APP.Plugins.Validations = {
-    init: function() {
+    init: function () {
       this.localize();
       this.customMethods();
       this.validateFormsConstructor();
@@ -13,7 +13,7 @@
     },
     data: {
       // GENERIC FUNCTIONS
-      validateErrorPlacement: function(error, element) {
+      validateErrorPlacement: function (error, element) {
         error.addClass('ui-input__validation');
         if (element.is('select')) {
           error.appendTo(element.closest('.selectric-wrapper'));
@@ -23,7 +23,7 @@
           error.appendTo(element.parent('div'));
         }
       },
-      validateHighlight: function(element) {
+      validateHighlight: function (element) {
         let $element = $(element);
 
         if ($element.is('select')) {
@@ -32,7 +32,7 @@
           $(element).addClass('has-error');
         }
       },
-      validateUnhighlight: function(element) {
+      validateUnhighlight: function (element) {
         let $element = $(element);
 
         if ($element.is('select')) {
@@ -41,7 +41,7 @@
           $(element).removeClass('has-error');
         }
       },
-      validateSubmitHandler: function(form) {
+      validateSubmitHandler: function (form) {
         $(form).addClass('loading');
         let formData = $(form).serialize();
         let sucessFunction = $(form).data('success-function');
@@ -55,7 +55,7 @@
       masks: {
         phone: {
           required: true,
-          normalizer: function(value) {
+          normalizer: function (value) {
             let PHONE_MASK = '+X (XXX) XXX-XXXX';
             if (!value || value === PHONE_MASK) {
               return value;
@@ -68,13 +68,14 @@
         },
       },
     },
-    customMethods: function() {
+    customMethods: function () {
       $.validator.addMethod(
         'laxEmail',
-        function(value, element) {
+        function (value, element) {
           // allow any non-whitespace characters as the host part
           return (
             this.optional(element) ||
+            // eslint-disable-next-line no-useless-escape
             /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
               value
             )
@@ -83,7 +84,7 @@
         'Email format must be like name@site.com'
       );
     },
-    localize: function() {
+    localize: function () {
       /*
        * Translated default messages for the jQuery validation plugin.
        * Locale: RU (Russian; русский язык)
@@ -110,13 +111,13 @@
         min: $.validator.format('Пожалуйста, введите число, большее или равное {0}.'),
       });
     },
-    validateFormsConstructor: function() {
+    validateFormsConstructor: function () {
       let _this = this;
 
       let $forms = $('.js-validate-form:not(.is-validation-attached)');
       if ($forms.length === 0) return;
       // CONSTRUCTOR LIKE FIRST
-      $forms.each(function(i, form) {
+      $forms.each(function (i, form) {
         let $form = $(form);
 
         let validationOptions = {
@@ -149,7 +150,7 @@
         $form.addClass('is-validation-attached');
       });
     },
-    validateFormsCustom: function() {
+    validateFormsCustom: function () {
       let _this = this;
       let requestValidationObject = {
         errorPlacement: _this.data.validateErrorPlacement,

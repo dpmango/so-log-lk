@@ -1,6 +1,6 @@
-(function($, APP) {
+(function ($, APP) {
   APP.Dev.Breakpoint = {
-    setBreakpoint: function() {
+    setBreakpoint: function () {
       let wHost = window.location.host.toLowerCase();
       let displayCondition =
         wHost.indexOf('localhost') >= 0 ||
@@ -13,15 +13,15 @@
         let content = "<div class='dev-bp-debug'>" + wWidth + ' x ' + wHeight + '</div>';
 
         $('.page').append(content);
-        setTimeout(function() {
+        setTimeout(function () {
           $('.dev-bp-debug').fadeOut();
         }, 1000);
-        setTimeout(function() {
+        setTimeout(function () {
           $('.dev-bp-debug').remove();
         }, 1500);
       }
     },
-    listenResize: function() {
+    listenResize: function () {
       $(window).on('resize', debounce(this.setBreakpoint, 200));
     },
   };

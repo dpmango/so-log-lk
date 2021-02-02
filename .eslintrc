@@ -33,7 +33,7 @@
     "quotes": [2, "single", "avoid-escape"],
     "semi": 2,
     "space-before-blocks": 2,
-    "space-before-function-paren": ["error", "always"],
+    "space-before-function-paren": ["error", "ignore"],
     "constructor-super": 2,
     "arrow-spacing": 2
   }

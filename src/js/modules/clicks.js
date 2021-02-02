@@ -1,14 +1,14 @@
 //////////
 // CICKS
 //////////
-(function($, APP) {
+(function ($, APP) {
   APP.Plugins.Clicks = {
-    init: function() {
+    init: function () {
       $(document)
-        .on('click', '[href="#"]', function(e) {
+        .on('click', '[href="#"]', function (e) {
           e.preventDefault();
         })
-        .on('click', '[js-link]', function(e) {
+        .on('click', '[js-link]', function (e) {
           let dataHref = $(this).data('href');
           if (dataHref && dataHref !== '#') {
             e.preventDefault();
@@ -17,7 +17,7 @@
           }
         })
         // prevent going the same link (if barba is connected)
-        .on('click', 'a, [js-link]', function(e) {
+        .on('click', 'a, [js-link]', function (e) {
           let href = $(this).data('href') || $(this).attr('href');
           let path = window.location.pathname;
 
@@ -27,7 +27,7 @@
           }
         })
         // scroll to section
-        .on('click', 'a[href^="#section"]', function() {
+        .on('click', 'a[href^="#section"]', function () {
           // section scroll
           let el = $(this).attr('href');
           let topTarget = $(el).offset().top;
@@ -41,14 +41,12 @@
           return false;
         })
         // grid toggler
-        .on('click', '[js-show-grid]', function() {
+        .on('click', '[js-show-grid]', function () {
           $(this).toggleClass('is-active');
           $('.demo-grid').fadeToggle();
         })
-        .on('click', '.ui-pass-eye', function() {
-          let $input = $(this)
-            .closest('.ui-group')
-            .find('input');
+        .on('click', '.ui-pass-eye', function () {
+          let $input = $(this).closest('.ui-group').find('input');
           let inputType = $input.attr('type');
 
           $(this).toggleClass('is-active');
@@ -60,7 +58,7 @@
           }
         });
     },
-    destroy: function() {
+    destroy: function () {
       // ... code ...
     },
   };
