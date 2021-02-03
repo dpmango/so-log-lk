@@ -2,13 +2,33 @@
 .auth
   &__title
     // h3 instance
-
   &__form
     width: 100%
     margin-top: 32px
-
   &__wrapper
     min-height: calc(100vh - 90px)
     display: flex
     flex-direction: column
     justify-content: center
+    padding-top: 20px
+    padding-bottom: 60px
+
++r($lg)
+  .auth
+    &__wrapper
+      min-height: calc(100vh - 60px)
+
++r($md)
+  .auth
+    &__wrapper
+      max-width: 400px
+      margin-left: auto
+      margin-right: auto
+    &__form
+      margin-top: 20px
+
++r($sm)
+  .auth
+    &__wrapper
+      min-height: calc(100vh - 42px)
+      padding-bottom: 40px

@@ -21,6 +21,14 @@
     &::placeholder
       color: rgba($colorRed, .5)
 
++r($md)
+  .ui-input
+    &.has-error
+      margin-bottom: 16px
+      & + .ui-pass-eye
+        bottom: 30px
+
+
 .ui-input-iconed
   position: relative
   .ico
@@ -139,13 +147,14 @@ textarea.ui-input
 .ui-input__validation
   position: absolute
   top: 100%
-  right: 0
-  background: $colorRed
-  font-size: 12px
-  color: white
-  padding: 3px 5px
+  left: 0
+  padding-top: 6px
+  color: $colorRed
+  font-size: 14px
 
-
++r($md)
+  .ui-input__validation
+    top: calc(100% - 16px)
 
 input[type="date"]
   // padding-top: 14px

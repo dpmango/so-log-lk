@@ -2,7 +2,7 @@
 .auth
   .container.container--6
     .auth__wrapper
-      h3.auth__title.h3-title(data-aos="fade-up") Регистрация
+      h3.auth__title.h3-title.h3-title-lg.h3-title-sm(data-aos="fade-up") Регистрация
 
       form.auth__form.js-validate-form(data-aos="fade-up" data-success-function="funcNameCallbackSucces")
         .row
@@ -36,7 +36,12 @@
 
           .col.col-12
             .auth__cta
-              button(type="submit").btn.btn-primary Зарегистрироваться
+              button(type="submit").btn.btn-primary.btn--block Зарегистрироваться
 
           .col.col-12.mt-2
             a(href="auth.html").helper-link Войти
+
+script.
+  function funcNameCallbackSucces(args){
+    console.log(args)
+  }

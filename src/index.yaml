@@ -2,13 +2,13 @@ ProjectTitle: SO Logisitics
 
 PageList:
   - file: auth.html
-    ready: 70
+    ready: 100
   - file: signup.html
-    ready: 70
+    ready: 100
   - file: forget.html
-    ready: 70
+    ready: 100
   - file: auth-error.html
-    ready: 70
+    ready: 100
   - file: supply-current.html
     ready: 70
   - file: supply-done.html
