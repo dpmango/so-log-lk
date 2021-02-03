@@ -69,6 +69,7 @@ let easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.Tabs.init(fromPjax);
       APP.Plugins.TextareaAutoExpand.init();
       APP.Plugins.Validations.init();
+      APP.Plugins.Choises.init();
       APP.Plugins.LegacySupport.fixImages();
       APP.Plugins.DatePicker.init(fromPjax);
       APP.Plugins.Upload.init(fromPjax);

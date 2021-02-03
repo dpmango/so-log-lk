@@ -28,7 +28,11 @@ include ../supply/_mixins
         .col.col-3.col-xl-5.col-md-12
           .ui-group
             label(for="dash_filter_2") Статус поставки
-            input.ui-input(type="text" id="dash_filter_2")
+            select.js-choices.ui-input(id="dash_filter_2")
+              option() Все
+              option() Текущие
+              option() Завершенные
+              option() Незавершенные
 
         .col.col-2.col-xl-auto
           .ui-group

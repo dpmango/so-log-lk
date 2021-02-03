@@ -11,7 +11,7 @@ import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
 import datepicker from 'air-datepicker';
-
+import Choices from 'choices.js';
 // expose imports to window to use in app.js
 // (jquery is exposed in expose-loader)
 // window.jQuery = $;
@@ -30,3 +30,4 @@ window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
 window.datepicker = datepicker;
+window.Choices = Choices;
