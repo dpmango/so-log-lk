@@ -1,9 +1,10 @@
 // .supply-details
 .supply-details.panel
   .supply-details__info
+    .supply-details__cta
+      a(href="#" data-micromodal-trigger="modalUploadDoc").btn.btn-primary Загрузить <span class="md-hidden">документ</span>
     .wysiwyg
-      a(href="#" data-micromodal-trigger="modalUploadDoc").btn.btn-primary Загрузить документ
-      .table-scroller
+      .table-scroller.table-scroller--w750
         table.table.table--w-head(data-aos="fade")
           caption Мои документы
           thead
@@ -23,7 +24,7 @@
               td
                 a(href="#") Приложение к договору
 
-      .table-scroller
+      .table-scroller.table-scroller--w750
         table.table.table--w-head(data-aos="fade")
           caption Документы исполнителя
           thead

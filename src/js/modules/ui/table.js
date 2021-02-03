@@ -17,13 +17,13 @@
       _window.on('resize', debounce(this.checkScrollbars.bind(this), 100));
     },
     checkScrollbars: function () {
-      const $tables = $('.table-scroller');
+      const $tables = $('.table-scroller, .dash__nav-scroller');
       if ($tables.length === 0) return;
 
       const hasScrollBar = function ($el) {
         return {
-          x: $el.find('table').width() > $el.width(),
-          y: $el.find('table').height() > $el.height(),
+          x: $el.find('table, ul').width() > $el.width(),
+          y: $el.find('table, ul').height() > $el.height(),
         };
       };
 

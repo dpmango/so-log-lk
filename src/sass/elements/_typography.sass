@@ -140,12 +140,39 @@ p + p
   margin-right: -30px
   padding-left: 30px
   padding-right: 30px
-  &.has-scrollbar::after
-    flex: 0 0 30px
-    width: 30px
-    display: inline-block
-    content: ' '
-
+  &.has-scrollbar
+    &::after
+      flex: 0 0 30px
+      width: 30px
+      display: inline-block
+      content: ' '
+  &--w400
+    .table
+      min-width: 400px
+  &--w450
+    .table
+      min-width: 450px
+  &--w500
+    .table
+      min-width: 500px
+  &--w600
+    .table
+      min-width: 600px
+  &--w650
+    .table
+      min-width: 650px
+  &--w700
+    .table
+      min-width: 700px
+  &--w750
+    .table
+      min-width: 750px
+  &--w800
+    .table
+      min-width: 800px
+  &--w1000
+    .table
+      min-width: 1000px
 +r($sm)
   .table-scroller
     margin-left: -20px
@@ -156,6 +183,7 @@ p + p
       flex-basis: 30px
       width: 30px
 
+// table
 .table
   border-collapse: collapse
   width: 100%
@@ -187,6 +215,7 @@ p + p
     caption
       font-size: 18px
 
+// .table--w-head
 .table--w-head
   thead
     td
@@ -215,6 +244,7 @@ p + p
       td
         padding: 10px
 
+// .table--financial
 .table--financial
   thead
     td
@@ -257,6 +287,15 @@ p + p
         width: 50px
         padding-right: 5px
 
++r($lg)
+  .table--financial
+    thead
+      td
+        font-size: 14px
+    tbody
+
+
+// table-file
 .table-file
   display: flex
   align-items: center

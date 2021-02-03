@@ -28,6 +28,12 @@
     margin-bottom: -15px
     margin-left: calc(-92px - 60px)
     margin-right: -60px
+    &.has-scrollbar
+      .dash__nav
+        &::after
+          display: inline-block
+          content: ' '
+          width: 60px
   &__nav
     flex: 0 0 auto
     position: relative
@@ -36,10 +42,6 @@
     align-items: center
     margin: 20px 0 0
     padding: 0
-    &::after
-      display: inline-block
-      content: ' '
-      width: 60px
     &::before
       display: inline-block
       content: ' '

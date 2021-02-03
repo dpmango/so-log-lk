@@ -11,6 +11,7 @@
       this.checkHash();
     },
     changeActiveTab: function (dataHref) {
+      const _this = this;
       let $link = $('.js-tabs-nav a[href="#' + dataHref + '"]');
       if ($link.length === 0) return;
       let $container = $link.closest('.js-tabs');
@@ -19,6 +20,8 @@
       // li active
       $li.addClass('is-active');
       $li.siblings().removeClass('is-active');
+
+      _this.setHighlighterPosition($link, true);
 
       // change active tab
       let $tab = $container.find('.js-tab[data-tab="' + dataHref + '"]');
@@ -40,16 +43,14 @@
         })
         .on('mouseenter', '.js-tabs-nav a', function () {
           let $link = $(this);
-          let $highlighter = $('.js-nav-highlighter');
 
-          _this.setHighlighterPosition($link, $highlighter);
+          _this.setHighlighterPosition($link);
         })
         .on('mouseleave', '.js-tabs-nav', function () {
           let $container = $(this);
           let $link = $container.find('li.is-active a');
-          let $highlighter = $container.find('.js-nav-highlighter');
 
-          _this.setHighlighterPosition($link, $highlighter);
+          _this.setHighlighterPosition($link);
         });
     },
     checkHash: function () {
@@ -70,14 +71,22 @@
         _this.setHighlighterPosition($link, $highlighter);
       });
     },
-    setHighlighterPosition: function ($link, $highlighter) {
+    setHighlighterPosition: function ($link, scrollable) {
       let elWidth = $link.width();
       let elLeft = $link.position().left;
+      let $container = $link.closest('.js-tabs-nav');
+      let $highlighter = $container.find('.js-nav-highlighter');
 
       $highlighter.css({
         width: elWidth,
         left: elLeft + 5,
       });
+
+      // if scrollbar - scroll to
+      let $scroller = $container.closest('.dash__nav-scroller');
+      if (scrollable && $scroller.length > 0) {
+        $scroller.animate({ scrollLeft: elLeft }, 300);
+      }
     },
   };
 })(jQuery, window.APP);
