@@ -1,0 +1,150 @@
+
+$disabledColor: #c0c4cc
+
+/* ss-item (col like)
+.ss-item
+  padding-top: 90px
+  width: 25%
+  position: relative
+  line-height: 1.2
+  &:last-child
+    width: 135px
+    position: absolute
+    top: 0
+    right: 0
+    &:after
+      width: 25px
+      left: 20px
+    &:before
+      content: ''
+      width: 9px
+      height: 6px
+      position: absolute
+      top: 71px
+      left: 50px
+      background: #e5aaaa
+      border-radius: 6px
+  &:after
+    content: ''
+    width: calc(100% + 6px)
+    height: 6px
+    position: absolute
+    top: 71px
+    left: 0
+    background: #e5aaaa
+    border-radius: 6px
+
+  &_last:after
+    display: none
+
+  &__dis
+    &:after
+      background: $disabledColor
+    &:last-child
+      &:after, &:before
+        background: $disabledColor
+    &:before, .ss-item__status
+      background: $disabledColor
+    .ss-item__date
+      min-height: 32px
+      color: $disabledColor
+    .ss-item__title
+      color: $disabledColor
+
+  &__ico
+    margin-left: -15px
+    max-width: 60px
+    width: 100%
+    height: 50px
+    display: flex
+    align-items: flex-end
+    position: absolute
+    top: 0
+    left: 0
+    img
+      height: 100%
+      max-width: 100%
+    .ico
+      font-size: 44px
+      color: #505050
+    span
+      width: 50px
+      height: 50px
+      display: block
+      background: $colorPrimary
+
+  &__date
+    display: block
+    margin-top: 5px
+    font-size: 14px
+    color: #686868
+  &__title
+    display: block
+    margin-top: 10px
+    font-size: 14px
+  &__status
+    width: 22px
+    height: 22px
+    position: absolute
+    top: 63px
+    left: 0
+    border-radius: 20px
+    background: $colorPrimary url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMyAxMSI+CiAgPGRlZnMvPgogIDxwYXRoIGZpbGw9InJnYigyNTUsIDI1NSwgMjU1KSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTIuODM3IDIuNzg0TDcuNDk2IDguMTI1bC4wOTEuMDkxLTIuMTIxIDIuMTIxLS4wOTEtLjA5MS0uMDkxLjA5MS0yLjEyMS0yLjEyMS4wOTEtLjA5MUwuMTYzIDUuMDM0bDIuMTIxLTIuMTIxIDMuMDkxIDMuMDkxTDEwLjcxNi42NjNsMi4xMjEgMi4xMjF6Ii8+Cjwvc3ZnPg==") no-repeat center center
+    -webkit-background-size: 13px 10px
+    background-size: 13px 10px
+    border: 2px solid #f7f7f7
+    z-index: 3
+  &__now
+    position: absolute
+    left: 37%
+    top: 0
+
+
++r($lg)
+  .ss-item
+    padding-top: 15px
+    padding-left: 112px
+    padding-bottom: 10px
+    width: 100%
+    position: relative
+    line-height: 1.2
+    &:last-child
+      width: 100%
+      &:before
+        display: none
+      &:after
+        content: ''
+        width: 6px
+        height: calc(100% + 15px)
+        top: 0
+        left: 83px
+        border-radius: 0
+    &:after
+      content: ''
+      width: 6px
+      height: calc(100% + 15px)
+      top: 0
+      left: 83px
+      border-radius: 0
+    &__ico
+      margin-left: 0
+      width: 60px
+      justify-content: center
+    &__status
+      top: 17px
+      left: 75px
+      position: relative
+    &:last-child
+      position: relative
+      top: 0
+      left: 0
+    &__status
+      position: absolute
+
+
+  .ss-item
+    padding-top: 15px
+    padding-left: 105px
+    min-height: 90px
+    &:last-child:after, &:after
+      left: 86px

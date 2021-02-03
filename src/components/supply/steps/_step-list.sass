@@ -24,7 +24,6 @@ $disabledColor: #c0c4cc
     top: 0
     left: 0
     background: linear-gradient(to right, #f7f7f7 0%, #f7f7f7 16%, #ffffff 18%, #ffffff 29%, #f7f7f7 32%, #f7f7f7 84%, #ffffff 87%, #ffffff 97%, #f7f7f7 100%)
-
   &__box
     width: 62px
     height: 61px
@@ -36,6 +35,10 @@ $disabledColor: #c0c4cc
       max-width: 100%
     .ico
       font-size: 61px
+  &__row
+    padding-right: 135px
+    position: relative
+    display: flex
 
   &__first:before
     display: none
@@ -51,224 +54,60 @@ $disabledColor: #c0c4cc
       &:before, &:after
         display: none
 
-.supply-step-row
-  padding-right: 135px
-  position: relative
-  display: flex
-
-/* ss-item (col like)
-.ss-item
-  padding-top: 90px
-  width: 25%
-  position: relative
-  line-height: 1.2
-  &:last-child
-    width: 135px
-    position: absolute
-    top: 0
-    right: 0
-    &:after
-      width: 25px
-      left: 20px
-    &:before
-      content: ''
-      width: 9px
-      height: 6px
-      position: absolute
-      top: 71px
-      left: 50px
-      background: #e5aaaa
-      border-radius: 6px
-  &:after
-    content: ''
-    width: calc(100% + 6px)
-    height: 6px
-    position: absolute
-    top: 71px
-    left: 0
-    background: #e5aaaa
-    border-radius: 6px
-
-  &_empty
-    &:after, &:before
-      display: none
-
-  &_last:after
-    display: none
-
-  &__dis
-    &:after
-      background: $disabledColor
-    &:last-child
-      &:after, &:before
-        background: $disabledColor
-    &:before, .ss-item__status
-      background: $disabledColor
-    .ss-item__date
-      min-height: 32px
-      color: $disabledColor
-    .ss-item__title
-      color: $disabledColor
-
-
-  &__ico
-    margin-left: -15px
-    max-width: 60px
-    width: 100%
-    height: 50px
-    display: flex
-    align-items: flex-end
-    position: absolute
-    top: 0
-    left: 0
-    img
-      height: 100%
-      max-width: 100%
-    .ico
-      font-size: 44px
-      color: #505050
-    span
-      width: 50px
-      height: 50px
-      display: block
-      background: $colorPrimary
-
-  &__date
-    display: block
-    margin-top: 5px
-    font-size: 14px
-    color: #686868
-  &__title
-    display: block
-    margin-top: 10px
-    font-size: 14px
-  &__status
-    width: 22px
-    height: 22px
-    position: absolute
-    top: 63px
-    left: 0
-    border-radius: 20px
-    background: $colorPrimary url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMyAxMSI+CiAgPGRlZnMvPgogIDxwYXRoIGZpbGw9InJnYigyNTUsIDI1NSwgMjU1KSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTIuODM3IDIuNzg0TDcuNDk2IDguMTI1bC4wOTEuMDkxLTIuMTIxIDIuMTIxLS4wOTEtLjA5MS0uMDkxLjA5MS0yLjEyMS0yLjEyMS4wOTEtLjA5MUwuMTYzIDUuMDM0bDIuMTIxLTIuMTIxIDMuMDkxIDMuMDkxTDEwLjcxNi42NjNsMi4xMjEgMi4xMjF6Ii8+Cjwvc3ZnPg==") no-repeat center center
-    -webkit-background-size: 13px 10px
-    background-size: 13px 10px
-    border: 2px solid #f7f7f7
-    z-index: 3
-  &__now
-    position: absolute
-    left: 37%
-    top: 0
-
 
 
 +r($lg)
-  .supply-step-row
-    margin: 0 auto
-    padding: 0
-    flex-direction: column
+
 
   .supply-step
     padding: 0 20px
     margin-bottom: 0
     background: #f7f7f7
     position: relative
-
     &:before, &:after
       display: none
-
-    .supply-step__box
-      width: 45px
-      height: 45px
-
     &:first-child
       padding-top: 70px
-
     &:last-child
       padding-bottom: 60px
 
-  .supply-step__first .supply-step__box
-    position: absolute
-    top: 20px
-    left: 83px
+    &__box
+      width: 45px
+      height: 45px
+    &__row
+      margin: 0 auto
+      padding: 0
+      flex-direction: column
 
-  .supply-step__last
-    .supply-step__box
-      position: absolute
-      top: auto
-      bottom: 20px
-      left: 83px
+    &__first
+      .supply-step__box
+        position: absolute
+        top: 20px
+        left: 83px
+    &__last
+      .supply-step__box
+        position: absolute
+        top: auto
+        bottom: 20px
+        left: 83px
 
     .ss-item:last-child
       padding-bottom: 0
 
 
-  .ss-item
-    padding-top: 15px
-    padding-left: 112px
-    padding-bottom: 10px
-    width: 100%
-    position: relative
-    line-height: 1.2
+    // TODO - overrides again
     &:last-child
-      width: 100%
-      &:before
-        display: none
-      &:after
-        content: ''
-        width: 6px
-        height: calc(100% + 15px)
-        top: 0
-        left: 83px
-        border-radius: 0
-    &:after
-      content: ''
-      width: 6px
-      height: calc(100% + 15px)
-      top: 0
-      left: 83px
-      border-radius: 0
-    &__ico
-      margin-left: 0
-      width: 60px
-      justify-content: center
+      padding-bottom: 40px
+
+    &__last
+      .supply-step__box
+        bottom: 0
+        left: -10px
+
     &__status
-      top: 17px
-      left: 75px
-      position: relative
-    &:last-child
-      position: relative
-      top: 0
-      left: 0
-    &__status
-      position: absolute
+      left: 78px
 
-  .supply-step:last-child
-    padding-bottom: 40px
-
-  .supply-step__last .supply-step__box
-    position: absolute
-    top: auto
-    bottom: 0
-    left: -10px
-
-  .ss-item__status
-    left: 78px
 
   .supply-step
     padding: 0 10px
 
-  .ss-item
-    padding-top: 15px
-    padding-left: 105px
-    min-height: 90px
-    &:last-child:after, &:after
-      left: 86px
-
-  .ss-item_empty
-    padding: 0
-    margin: 0
-    height: 0
-    max-height: 0
-    min-height: 0
-
-/* stop import
