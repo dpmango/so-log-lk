@@ -2,6 +2,7 @@
 .dash
   &__wrapper
     padding: 25px 0 35px
+    max-width: 1340px
   &__head
     display: flex
     align-items: center
@@ -11,6 +12,9 @@
     margin: 10px 0 10px auto
   &__filter
     margin-top: 20px
+    margin-bottom: 20px
+    .ui-group
+      margin-bottom: 10px
   &__supply
     .supply-scope
       margin-bottom: 30px
@@ -74,7 +78,16 @@
     background: $colorPrimary
     transition: all .25s $ease
 
++r($md)
+  .dash
+    &__filter
+      .btn
+        margin-top: 0
+
 +r($sm)
   .dash
     &__nav
       margin-top: 10px
+    &__supply
+      .supply-scope
+        margin-bottom: 20px

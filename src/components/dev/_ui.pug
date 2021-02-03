@@ -88,14 +88,14 @@
       h1.h1-title Интерфейс
 
       // ui upload
-      .ui-upload.js-ui-upload(data-allowed-mime="image, application" data-max-size="5" data-upload-btn="[js-file-upload-btn]")
+      .ui-upload.js-ui-upload(data-allowed-mime="image, application" data-max-size="5" data-upload-btn=".js-file-upload-btn")
         input(type="file" id="file")
         label.ui-upload__trigger(for="file")
-          .btn.btn-outline.btn-outline--big.btn--block Выбрать файл
+          span.btn.btn-outline.btn-outline--big.btn--block Выбрать файл
         .ui-upload__info
           .ui-upload__name
           .ui-upload__close.js-upload-close
             +svgMono('close-simple')
 
-        button(js-file-upload-btn type="submit" disabled).btn.btn-primary.btn--block Загрузить
+        button.js-file-upload-btn(type="submit" disabled).btn.btn-primary.btn--block Загрузить
 

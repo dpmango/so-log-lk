@@ -10,9 +10,9 @@ PageList:
   - file: auth-error.html
     ready: 100
   - file: supply-current.html
-    ready: 70
+    ready: 90
   - file: supply-done.html
-    ready: 70
+    ready: 90
   - file: supply-details.html
     ready: 70
   - file: profile.html

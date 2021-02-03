@@ -8,7 +8,7 @@
         .on('click', '[href="#"]', function (e) {
           e.preventDefault();
         })
-        .on('click', '[js-link]', function (e) {
+        .on('click', '.js-link', function (e) {
           let dataHref = $(this).data('href');
           if (dataHref && dataHref !== '#') {
             e.preventDefault();
@@ -17,7 +17,7 @@
           }
         })
         // grid toggler
-        .on('click', '[js-show-grid]', function () {
+        .on('click', '.js-show-grid', function () {
           $(this).toggleClass('is-active');
           $('.demo-grid').fadeToggle();
         })

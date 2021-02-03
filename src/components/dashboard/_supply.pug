@@ -7,12 +7,12 @@ include ../supply/_mixins
       .dash__head(data-aos="fade")
         .h1-title Текущие поставки
       .dash__filter.row(data-aos="fade")
-        .col.col-3
+        .col.col-3.col-xl-5.col-md-12
           .ui-group
             label(for="dash_filter_1") Номер поставки
             input.ui-input(type="text" id="dash_filter_1")
 
-        .col.col-4
+        .col.col-4.col-xl-7.col-md-12
           .ui-group
             label(for="dash_filter_1") Дата завершения
             .row
@@ -25,14 +25,14 @@ include ../supply/_mixins
                   input.ui-input.js-datepicker(type="date" id="dash_filter_3")
                   +svgMono('calendar')
 
-        .col.col-3
+        .col.col-3.col-xl-5.col-md-12
           .ui-group
-            label(for="dash_filter_1") Статус поставки
-            input.ui-input(type="text" id="dash_filter_1")
+            label(for="dash_filter_2") Статус поставки
+            input.ui-input(type="text" id="dash_filter_2")
 
-        .col.col-2
+        .col.col-2.col-xl-auto
           .ui-group
-            button(type="submit").btn.btn-primary Применить
+            button(type="submit").btn.btn-primary.btn--block Применить
 
       // supply
       .dash__supply
