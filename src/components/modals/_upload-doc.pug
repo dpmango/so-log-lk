@@ -1,34 +1,34 @@
 // Upload doc modal
-#modalUploadDoc.modal.micromodal-slide(aria-hidden='true')
+#modalUploadDoc.modal.modal--sidebar.micromodal-slide(aria-hidden='true')
   .modal__overlay(tabindex='-1' data-micromodal-close)
     .modal__container(role='dialog' aria-modal='true')
       .modal__close(aria-label='Close modal' data-micromodal-close)
         +svgMono('close-simple')
       .modal__header.tac
-        .h3-title.modal__title Загрузка документов
+        .h3-title.h3-title.h3-title-lg.h3-title-sm.modal__title Загрузка документов
 
       .modal__content
         .modal__form
           .row
-            .col.col-6
+            .col.col-6.col-md-12
               .ui-group
                 label(for="modaldoc_name") Название документа
                 input.ui-input(type="text" name="modaldoc_name" id="modaldoc_name" required)
-            .col.col-6
+            .col.col-6.col-md-12
               .ui-group
                 label(for="modaldoc_num") Номер документа
                 input.ui-input(type="text" name="modaldoc_num" id="modaldoc_num" required)
 
-            .col.col-6
+            .col.col-6.col-md-12
               .ui-group
                 label(for="modaldoc_date") Дата документа
                 .ui-input-iconed
                   input.ui-input.js-datepicker(type="date" name="modaldoc_date" id="modaldoc_date" required)
                   +svgMono('calendar')
-            .col.col-6
+            .col.col-6.col-md-12
               .ui-group
                 .row
-                  .col.col-6
+                  .col.col-6.col-sm-12
                     // ui upload
                     .ui-upload.js-ui-upload(data-allowed-mime="image, application" data-max-size="5" data-upload-btn=".js-file-upload-btn")
                       input(type="file" id="file")
@@ -39,6 +39,6 @@
                         .ui-upload__close.js-upload-close
                           +svgMono('close-simple')
 
-                  .col.col-6
+                  .col.col-6.col-sm-12
                     button.js-file-upload-btn(type="submit" disabled).btn.btn-primary.btn--block Загрузить
 

@@ -8,175 +8,180 @@
     .wysiwyg.mt-2
       h3 Список товара, на который требуется разрешительная документация:
 
-      table.table.table--w-head
-        thead
-          tr
-            td Наименование товара
-            td Вид разрешительной документации
-        tbody
-          tr
-            td Наименование товара
-            td Вид разрешительной документации товара
-          tr
-            td Длинное наименование товара
-            td Вид разрешительной документации длинное наименование товара
-          tr
-            td Наименование товара
-            td Вид разрешительной документации наименование товара
+      .table-scroller
+        table.table.table--w-head
+          thead
+            tr
+              td Наименование товара
+              td Вид разрешительной документации
+          tbody
+            tr
+              td Наименование товара
+              td Вид разрешительной документации товара
+            tr
+              td Длинное наименование товара
+              td Вид разрешительной документации длинное наименование товара
+            tr
+              td Наименование товара
+              td Вид разрешительной документации наименование товара
 
 // .supply-details
 .supply-details.panel
   .supply-details__info
     .wysiwyg
-      table.table.table--financial(data-aos="fade")
-        caption Параметры запроса
-        tr
-          td Тип запрашиваемой услуги
-          td ТО+ТЭО
-        tr
-          td Краткое описание товара
-          td электроника
-        tr
-          td Стоимость груза
-          td 31 389.25 EUR
-        tr
-          td Класс опасности
-          td
-        tr
-          td Суммарный заявленный объём, м.куб
-          td 1.536
-        tr
-          td Суммарная заявленная масса брутто, кг
-          td 1063
-        tr
-          td Заявленное количество мест
-          td 6
-        tr
-          td Условия поставки (Инкотерм-2010)
-          td EXW
-        tr
-          td Пункт отправления
-          td Готтмадинген
-        tr
-          td Пункт назначения
-          td Волоколамск
-        tr
-          td Таможенный пост
-          td Волоколамский пост
-        tr
-          td Таможенный режим
-          td Импорт
-        tr
-          td Тип перевозки
-          td Авто
+      .table-scroller
+        table.table.table--financial(data-aos="fade")
+          caption Параметры запроса
+          tr
+            td Тип запрашиваемой услуги
+            td ТО+ТЭО
+          tr
+            td Краткое описание товара
+            td электроника
+          tr
+            td Стоимость груза
+            td 31 389.25 EUR
+          tr
+            td Класс опасности
+            td
+          tr
+            td Суммарный заявленный объём, м.куб
+            td 1.536
+          tr
+            td Суммарная заявленная масса брутто, кг
+            td 1063
+          tr
+            td Заявленное количество мест
+            td 6
+          tr
+            td Условия поставки (Инкотерм-2010)
+            td EXW
+          tr
+            td Пункт отправления
+            td Готтмадинген
+          tr
+            td Пункт назначения
+            td Волоколамск
+          tr
+            td Таможенный пост
+            td Волоколамский пост
+          tr
+            td Таможенный режим
+            td Импорт
+          tr
+            td Тип перевозки
+            td Авто
 
       //- h3 Услуги и стоимость
-      table.table.table--financial(data-aos="fade")
-        caption Услуги и стоимость
-        thead
+      .table-scroller
+        table.table.table--financial(data-aos="fade")
+          caption Услуги и стоимость
+          thead
+            tr
+              td.tac(rowspan="2") №
+              td(rowspan="2") Наименование услуги
+              td(rowspan="2") Описание услуги
+              td.tac(colspan="2") Стоимость
+            tr
+              td.tac Значение
+              td.tac Валюта
           tr
-            td.tac(rowspan="2") №
-            td(rowspan="2") Наименование услуги
-            td(rowspan="2") Описание услуги
-            td.tac(colspan="2") Стоимость
-          tr
-            td.tac Значение
-            td.tac Валюта
-        tr
-          td.tac(rowspan="4") 1
-          td(rowspan="4") Фрахт
-          td.pl-20 Авто доставка до консолидационного склада
-          td.tar 500.00
-          td.tac EUR
-        tr
-          td.pl-20 Авто доставка от консолидационного склада
-          td.tar 100.45
-          td.tac EUR
-        tr
-          td.pl-20 Страховка
-          td.tar 550.00
-          td.tac EUR
-        tr
-          td.pl-20 Оформление документов
-          td.tar 80.00
-          td.tac EUR
-        tr
-          td.tac(rowspan="2") 2
-          td(rowspan="2") Брокер
-          td.pl-20 Автоперевозка по Москве
-          td.tar 13 000.00
-          td.tac RUB
-        tr
-          td.pl-20 Таможенное оформление за печатью брокера
-          td.tar 6 000.00
-          td.tac RUB
-        tr
-          td.tac(rowspan="3") 3
-          td(rowspan="3") Таможенные пошлины
-          td.pl-20 Таможенная пошлина
-          td.tar 22 000.00
-          td.tac EUR
-        tr
-          td.pl-20 Таможенный НДС
-          td.tar 2 354.19
-          td.tac EUR
-        tr
-          td.pl-20 Таможенный сбор
-          td.tar 12 000.00
-          td.tac RUB
-
-      // table
-      table.table.table--financial(data-aos="fade")
-        caption Итоговая стоимость
-        thead
-          tr
-            td.tac.num-col №
-            td Наименование услуги
-            td.tac USD
-            td.tac RUB
+            td.tac(rowspan="4") 1
+            td(rowspan="4") Фрахт
+            td.pl-20 Авто доставка до консолидационного склада
+            td.tar 500.00
             td.tac EUR
-            td.tac В валюте груза
-        tbody
           tr
-            td.tac.num-col 1
-            td Фрахт
-            td.tac 0.00
-            td.tac 13 000.00
-            td.tac 1 230.45
-            td.tac 13 000.00
+            td.pl-20 Авто доставка от консолидационного склада
+            td.tar 100.45
+            td.tac EUR
           tr
-            td.tac 2
-            td Брокер
-            td.tac 0.00
-            td.tac 28 000.00
-            td.tac 0.00
-            td.tac 28 000.00
+            td.pl-20 Страховка
+            td.tar 550.00
+            td.tac EUR
           tr
-            td.tac.num-col 3
-            td Таможенные пошлины
-            td.tac 0.00
-            td.tac 38 000.00
-            td.tac 0.00
-            td.tac 38 000.00
+            td.pl-20 Оформление документов
+            td.tar 80.00
+            td.tac EUR
+          tr
+            td.tac(rowspan="2") 2
+            td(rowspan="2") Брокер
+            td.pl-20 Автоперевозка по Москве
+            td.tar 13 000.00
+            td.tac RUB
+          tr
+            td.pl-20 Таможенное оформление за печатью брокера
+            td.tar 6 000.00
+            td.tac RUB
+          tr
+            td.tac(rowspan="3") 3
+            td(rowspan="3") Таможенные пошлины
+            td.pl-20 Таможенная пошлина
+            td.tar 22 000.00
+            td.tac EUR
+          tr
+            td.pl-20 Таможенный НДС
+            td.tar 2 354.19
+            td.tac EUR
+          tr
+            td.pl-20 Таможенный сбор
+            td.tar 12 000.00
+            td.tac RUB
 
       // table
-      table.table.table--financial(data-aos="fade")
-        caption Логистический маршрут
-        thead
-          tr
-            td.tac.num-col №
-            td Пункт отправления
-            td Пункт назначения
-        tbody
-          tr
-            td.tac.num-col 1
-            td Нингбо
-            td Владивосток-Экспорт
-          tr
-            td.tac.num-col 2
-            td Владивосток-Экспорт
-            td Силикатная
-          tr
-            td.tac.num-col 3
-            td Силикатная
-            td Нижний Новгород
+      .table-scroller
+        table.table.table--financial(data-aos="fade")
+          caption Итоговая стоимость
+          thead
+            tr
+              td.tac.num-col №
+              td Наименование услуги
+              td.tac USD
+              td.tac RUB
+              td.tac EUR
+              td.tac В валюте груза
+          tbody
+            tr
+              td.tac.num-col 1
+              td Фрахт
+              td.tac 0.00
+              td.tac 13 000.00
+              td.tac 1 230.45
+              td.tac 13 000.00
+            tr
+              td.tac 2
+              td Брокер
+              td.tac 0.00
+              td.tac 28 000.00
+              td.tac 0.00
+              td.tac 28 000.00
+            tr
+              td.tac.num-col 3
+              td Таможенные пошлины
+              td.tac 0.00
+              td.tac 38 000.00
+              td.tac 0.00
+              td.tac 38 000.00
+
+      // table
+      .table-scroller
+        table.table.table--financial(data-aos="fade")
+          caption Логистический маршрут
+          thead
+            tr
+              td.tac.num-col №
+              td Пункт отправления
+              td Пункт назначения
+          tbody
+            tr
+              td.tac.num-col 1
+              td Нингбо
+              td Владивосток-Экспорт
+            tr
+              td.tac.num-col 2
+              td Владивосток-Экспорт
+              td Силикатная
+            tr
+              td.tac.num-col 3
+              td Силикатная
+              td Нижний Новгород

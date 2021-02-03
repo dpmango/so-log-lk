@@ -23,6 +23,8 @@
   &__header
     display: flex
     justify-content: center
+    padding-left: 40px
+    padding-right: 40px
 
   &__close
     position: absolute
@@ -47,52 +49,89 @@
     max-width: 816px
     margin: 50px auto 50px
 
+  &--sidebar
+    .modal__container
+      margin-left: 92px
+
++r(1178)
+  .modal
+    &__container
+      max-width: 100%
+      margin-right: 30px
+      margin-left: 30px
+    &--sidebar
+      .modal__container
+        margin-left: 122px
+
++r($md)
+  .modal
+    &__header
+      padding-top: 20px
+      padding-left: 0
+      padding-right: 0
+    &__form
+      margin-top: 32px
+      max-width: 400px
+      margin-bottom: 0
+    &--sidebar
+      .modal__container
+        margin-left: 30px
+
++r($sm)
+  .modal
+    &__container
+      padding-left: 20px
+      padding-right: 20px
+      margin-right: 20px
+      margin-left: 20px
+    &__header
+      text-align: left
+      justify-content: flex-start
+    &__close
+      right: 10px
+      top: 5px
+    &--sidebar
+      .modal__container
+        margin-left: 20px
 
 @keyframes mmfadeIn
   from
     opacity: 0
-
   to
     opacity: 1
 
 @keyframes mmfadeOut
   from
     opacity: 1
-
   to
     opacity: 0
 
 @keyframes mmslideIn
   from
     transform: translateY(15%)
-
   to
     transform: translateY(0)
 
 @keyframes mmslideOut
   from
     transform: translateY(0)
-
   to
     transform: translateY(-10%)
 
 .micromodal-slide
   display: none
-
   &.is-open
     display: block
 
   &[aria-hidden="false"]
     .modal__overlay
       animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1)
-
     .modal__container
       animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1)
 
   &[aria-hidden="true"]
     .modal__overlay
       animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1)
-
     .modal__container
       animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1)
 

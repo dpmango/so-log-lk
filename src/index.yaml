@@ -14,7 +14,7 @@ PageList:
   - file: supply-done.html
     ready: 100
   - file: supply-details.html
-    ready: 70
+    ready: 100
   - file: profile.html
     ready: 100
   - file: ui.html
