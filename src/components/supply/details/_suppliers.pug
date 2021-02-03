@@ -1,0 +1,29 @@
+// .supply-details
+.supply-details.panel
+  .supply-details__info
+    .wysiwyg
+      table.table.table--financial(data-aos="fade")
+        caption Выставленные счета
+        thead.tac
+          tr
+            td Название поставщика
+            td Номер инвойса
+            td Дата инвойса
+            td Сумма инвойса
+            td Валюта
+            td Срок оплаты
+            td Дата оплаты
+            td Сумма оплаты
+            td Задолжность
+        tbody
+          each group in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+            tr
+              td Длинное название поставщика
+              td.tac 000932-0811
+              td.tac 11.06.20
+              td.tar 32 000.00
+              td.tac RUB
+              td.tac 11.06.20
+              td.tac 11.06.20
+              td.tar 32 000.00
+              td.tar 32 000.00

@@ -1,0 +1,131 @@
+include _ss-item-mixin
+//- +SS_item({
+//-   ico: 'step-1',
+//-   date: '23:07 <br/>29.01.2020',
+//-   title: 'title <br/> name'
+//- })
+
+// .supply-step-list
+.supply-step-list(data-aos="fade")
+  // SUPPLY STEP (first)
+  .supply-step.supply-step__first
+    span.supply-step__box
+      +svgMono('suuply-box')
+    .supply-step-row
+      +SS_item({
+        ico: 'step-1',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Груз забран <br/> у грузоотправителя'
+      })
+      +SS_item({
+        ico: 'step-2',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Выход судна <br/> из порта отправаления'
+      })
+      +SS_item({
+        ico: 'step-3',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Приход судна <br/> в порт назначения'
+      })
+      +SS_item({
+        ico: 'step-4',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Разгрузка <br/> судна'
+      })
+      +SS_item({
+        ico: 'step-5',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Ожидание <br/> погрузки на жд'
+      })
+
+
+  // SUPPLY STEP
+  .supply-step
+    .supply-step-row
+      +SS_item({
+        ico: 'step-6',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Постановка <br/> на ж/д'
+      })
+      +SS_item({
+        ico: 'step-7',
+        date: '23:07 <br/>29.01.2020',
+        title: 'title <br/> name'
+      })
+      +SS_item({
+        ico: 'step-8',
+        date: '23:07 <br/>29.01.2020',
+        title: 'title <br/> name'
+      })
+      +SS_item({
+        ico: 'step-9',
+        date: '23:07 <br/>29.01.2020',
+        title: 'title <br/> name'
+      })
+      +SS_item({
+        ico: 'step-10',
+        date: '23:07 <br/>29.01.2020',
+        title: 'title <br/> name'
+      })
+
+  // SUPPLY STEP
+  .supply-step
+    .supply-step-row
+      +SS_item({
+        ico: 'step-11',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Отправка со склада <br/> консолидации'
+      })
+      +SS_item({
+        ico: 'step-12',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Прибытие <br/> на границу РФ'
+      })
+      +SS_item({
+        ico: 'step-13',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Прохождение <br/> границы РФ'
+      })
+      +SS_item({
+        ico: 'step-14',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Доставка до аэропорта <br/>отправления'
+      })
+      +SS_item({
+        ico: 'step-15',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Вылет из аэропорта <br/>отправления'
+      })
+
+  // SUPPLY STEP (last)
+  .supply-step.supply-step__last
+    span.supply-step__box
+      span.ico-box
+        +svgMono('suuply-box')
+    .supply-step-row
+      +SS_item({
+        ico: 'step-16',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Прилет в аэропорт <br/> назначения'
+      })
+      +SS_item({
+        ico: 'step-9',
+        date: '23:07 <br/>29.01.2020',
+        title: 'Доставка на склад <br/> СО в Москве',
+        note: 'Груз в пути до границы с РФ. Прибытие 30.02.2020'
+      })
+      +SS_item({
+        disabled: true,
+        ico: 'step-18',
+        title: 'Таможня'
+      })
+      +SS_item({
+        disabled: true,
+        ico: 'step-19',
+        title: 'ДТ выпущена'
+      })
+      +SS_item({
+        disabled: true,
+        ico: 'step-20',
+        title: 'Доставка <br/>груза'
+      })

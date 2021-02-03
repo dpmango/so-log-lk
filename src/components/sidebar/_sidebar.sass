@@ -12,6 +12,7 @@
     background: rgba(#000, .2)
     backdrop-filter: blur(4px)
 
+
 .sidebar
   position: fixed
   z-index: 10
@@ -79,6 +80,10 @@
   .sidebar
     &__wrapper
       padding-top: 60px
+
++r($md)
+  .sidebar
+    transform: translate3d(-92px, 0, 0)
 
 // sidebar menu (js-sidebar-menu)
 .s-menu

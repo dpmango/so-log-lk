@@ -1,0 +1,140 @@
+// .ss-note
+.ss-note
+  padding-top: 90px
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  line-height: 1.2
+  z-index: 2
+  &:after
+    content: ''
+    width: calc(50% - 27px)
+    height: 6px
+    position: absolute
+    top: 71px
+    right: 0
+    background: #c0c4cc
+    border-radius: 6px
+  &:before
+    content: ''
+    width: calc(50% + 22px)
+    height: 6px
+    position: absolute
+    top: 71px
+    left: 2px
+    background: $colorPrimary
+    border-radius: 6px
+  &__arrow
+    width: 15px
+    height: 26px
+    position: absolute
+    top: 62px
+    left: calc(50% + 11px)
+    font-size: 0
+    color: $colorPrimary
+    .ico
+      font-size: 26px
+  &__ico
+    height: 50px
+    display: flex
+    align-items: flex-end
+    position: absolute
+    top: 0
+    left: calc(50% + 15px)
+    transform: translate(-50%, 0)
+    font-size: 0
+    color: $colorPrimary
+    img
+      max-width: 100%
+    .ico
+      font-size: 44px
+  &__date
+    margin-top: 5px
+    display: block
+    color: #686868
+
+  &__text
+    margin-top: 10px
+    padding-bottom: 5px
+    display: block
+    position: absolute
+    bottom: calc(100% + 14px)
+    left: calc(50% + 25px)
+    color: $colorPrimary
+    font-weight: bold
+    white-space: nowrap
+    background: #fff
+    border-bottom: 2px solid $colorPrimary
+    transform: translate(-50%, 0)
+
+
++r($lg)
+  .ss-note
+    padding-top: 15px
+    padding-left: 105px
+    margin-left: -102px
+    min-height: 65px
+    position: relative
+    &:before
+      height: calc(100% + 60px)
+      width: 6px
+      position: absolute
+      top: -100%
+      left: 83px
+      background: $colorPrimary
+      border-radius: 6px
+      z-index: 3
+    &:after
+      height: calc(100% + 40px)
+      width: 6px
+      position: absolute
+      top: auto
+      bottom: -100%
+      left: 73px
+      background: #c0c4cc
+      border-radius: 6px
+      z-index: 2
+    &__ico
+      top: 20px
+      left: 17px
+      transform: none
+    &__text
+      max-width: 180px
+      min-width: 135px
+      left: 0
+      bottom: 0
+      white-space: normal
+      background: transparent
+      border-bottom: none
+      position: static
+      transform: none
+
+    &__arrow
+      width: 16px
+      height: 26px
+      position: absolute
+      top: 45px
+      left: 78px
+      z-index: 4
+      transform: rotate(90deg)
+
+    // TODO - why doubles ?
+    &__ico
+      width: 60px
+      top: 0px
+      left: 0px
+      justify-content: center
+    &:before
+      height: 100%
+      top: -60%
+      left: 83px
+    &:after
+      left: 83px
+    &__status
+      left: 78px
+    &__arrow
+      top: 11px
+    &:after
+      height: 100%
+      bottom: -40%

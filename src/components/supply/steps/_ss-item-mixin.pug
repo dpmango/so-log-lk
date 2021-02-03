@@ -1,0 +1,18 @@
+mixin SS_item(props)
+  // ss-item
+  .ss-item
+    .ss-item__ico
+      +svgMono(props.ico)
+    .ss-item__status
+    if props.date
+      .ss-item__date!= props.date
+    if props.title
+      .ss-item__title!= props.title
+    if props.note
+      // .ss-note
+      .ss-note
+        .ss-note__ico
+          +svgMono(props.ico)
+        .ss-note__arrow
+          +svgMono('arrow-fat')
+        .ss-note__text!= props.note
