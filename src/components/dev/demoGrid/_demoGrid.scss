@@ -25,6 +25,11 @@
   .demo-grid {
     left: 92px;
   }
+  @include r($md) {
+    .demo-grid {
+      left: 0px;
+    }
+  }
 }
 @include r($md) {
   .demo-grid {
@@ -49,7 +54,7 @@
   display: flex;
   font-size: 12px;
   justify-content: center;
-  left: 20px;
+  right: 20px;
   position: fixed;
   size: 50px;
   text-transform: uppercase;

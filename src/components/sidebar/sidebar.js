@@ -30,41 +30,40 @@
       // show menu when hovered any nav's
       // add hovered class
       // light up menu by index
-
-      //TODO - add debounced function for mopuseout
       _document
+        // when nav hovered - trigger menu linked link
+        // and adds hover class to li
         .on('mouseenter', '.js-sidebar-nav a', function () {
           let $link = $(this);
           let $menu = _this.data.menu;
-          let $container = _this.data.container;
-          let dataIndex = $link.parent().data('index');
-          // console.log({ dataIndex: dataIndex });
+          let dataIndex = $link.parent('li').data('index');
 
-          $link.addClass('is-active');
-          $menu.addClass('is-active');
-          $container.addClass('is-active');
-
-          // light up menu by index
-          $menu.find('li').removeClass('is-active');
-          $menu.find('li[data-index="' + dataIndex + '"]').addClass('is-active');
+          let $activeMenuLi = $menu.find('li[data-index="' + dataIndex + '"] > a');
+          $activeMenuLi.mouseenter();
         })
 
         .on('mouseenter', '.js-sidebar-menu a', function () {
           let $link = $(this);
+          let $container = _this.data.container;
           let $nav = _this.data.nav;
           let $menu = _this.data.menu;
-          let $menu2 = $link.parent('li').find('ul');
           let dataIndex = $link.parent().data('index');
 
-          // light up menu by index (reverse)
-          $menu.find('li').removeClass('is-active');
-          $nav.find('li').removeClass('is-active');
-          $nav.find('li[data-index="' + dataIndex + '"]').addClass('is-active');
+          if (dataIndex) {
+            // trigger only for first level menu (ul)
+            // general show elements
+            $menu.addClass('is-active');
+            $container.addClass('is-active');
 
-          $link.addClass('is-active');
+            // light up both nav and menu by index (reverse)
+            $nav.find('li').removeClass('is-hovered');
+            $nav.find('li[data-index="' + dataIndex + '"]').addClass('is-hovered');
+            $menu.find('li').removeClass('is-active'); // siblings of active (menu)
+            $link.parent('li').addClass('is-active'); // cur.active (menu)
+          }
         })
 
-        // opening sub lvl logic
+        // opening sub lvl logic (with throttled listener)
         .on(
           'mouseenter',
           '.js-sidebar-menu a',
@@ -83,10 +82,22 @@
             { leading: false }
           )
         )
+
+        // keep parents active when lvl-down (2 ul) is hovered
+        .on('mouseenter', '.js-sidebar-menu .s-menu__lvl-down a', function () {
+          let $link = $(this);
+          let $menu = _this.data.menu;
+          let dataIndex = $link.closest('ul').closest('ul').data('index');
+
+          let $activeMenuLi = $menu.find('li[data-index="' + dataIndex + '"] > a');
+          $activeMenuLi.mouseenter();
+        })
+
+        // cleanup when hovered out global container
         .on('mouseleave', '.sidebar-global-container', function () {
           _this.data.menu.removeClass('is-active');
           _this.data.container.removeClass('is-active');
-          _this.data.nav.find('li').removeClass('is-active');
+          _this.data.nav.find('li').removeClass('is-hovered');
           _this.data.menu.find('li').removeClass('is-active');
         });
     },
