@@ -53,21 +53,41 @@
           let $link = $(this);
           let $nav = _this.data.nav;
           let $menu = _this.data.menu;
+          let $menu2 = $link.parent('li').find('ul');
           let dataIndex = $link.parent().data('index');
-
-          $link.addClass('is-active');
 
           // light up menu by index (reverse)
           $menu.find('li').removeClass('is-active');
           $nav.find('li').removeClass('is-active');
           $nav.find('li[data-index="' + dataIndex + '"]').addClass('is-active');
+
+          $link.addClass('is-active');
         })
 
+        // opening sub lvl logic
+        .on(
+          'mouseenter',
+          '.js-sidebar-menu a',
+          throttle(
+            function () {
+              let $link = $(this);
+              let $menu = _this.data.menu;
+              let $menu2 = $link.parent('li').find('ul');
+
+              $menu.find('li > ul').removeClass('is-active');
+              if ($menu2.length > 0) {
+                $menu2.addClass('is-active');
+              }
+            },
+            300,
+            { leading: false }
+          )
+        )
         .on('mouseleave', '.sidebar-global-container', function () {
           _this.data.menu.removeClass('is-active');
           _this.data.container.removeClass('is-active');
           _this.data.nav.find('li').removeClass('is-active');
-          _this.data.nav.find('li').removeClass('is-active');
+          _this.data.menu.find('li').removeClass('is-active');
         });
     },
     // setPositions: function() {

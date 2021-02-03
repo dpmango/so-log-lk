@@ -126,11 +126,10 @@
   &__info
     position: relative
 
-
   &__cta
     position: absolute
     top: 0
-    right: 20px
+    right: 0px
     .btn
       font-size: 14px
       padding-top: 10px
@@ -138,6 +137,18 @@
 
 +r($lg)
   .supply-details
+    & + &
+      margin-top: 20px
     &__cta
       top: -5px
 
++r($md)
+  .supply-details
+    &__scope
+      table
+        display: block
+        td
+          display: block
+          padding: 2px 0
+          &:last-child
+            padding-bottom: 10px

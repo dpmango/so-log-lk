@@ -1,6 +1,6 @@
 mixin SS_item(props)
   // ss-item
-  .ss-item
+  .ss-item(class=props.disabled ? "ss-item__dis" : "")
     .ss-item__ico
       +svgMono(props.ico)
     .ss-item__status

@@ -7,6 +7,7 @@ $disabledColor: #c0c4cc
   width: 25%
   position: relative
   line-height: 1.2
+  padding-right: 10px
   &:last-child
     width: 135px
     position: absolute
@@ -45,6 +46,8 @@ $disabledColor: #c0c4cc
         background: $disabledColor
     &:before, .ss-item__status
       background: $disabledColor
+    .ss-item__ico .ico
+      color: $disabledColor
     .ss-item__date
       min-height: 32px
       color: $disabledColor
@@ -55,15 +58,40 @@ $disabledColor: #c0c4cc
     position: absolute
     top: 0
     left: 0
-    width: 100%
+    width: auto
     height: 50px
     display: flex
     align-items: flex-end
+    transform: translateX(-20%)
     img
       max-width: 100%
     .ico
       font-size: 44px
       color: #505050
+  &__ico, .ss-note__ico
+    .ico-mono
+      &-step-1, &-step-2, &-step-5
+        font-size: 48px
+      &-step-6
+        font-size: 52px
+      &-step-7, &-step-8, &-step-9, &-step-10
+        font-size: 32px
+      &-step-11
+        font-size: 37px
+      &-step-12
+        font-size: 30px
+        transform: translate(8px, -8px)
+      &-step-13
+        font-size: 40px
+        transform: translate(8px, -8px)
+      &-step-15
+        font-size: 47px
+      &-step-16
+        font-size: 66px
+        transform: translate(-4px, 16px)
+      &-step-18, &-step-19, &-step-20
+        font-size: 48px
+
     span
       width: 50px
       height: 50px
@@ -96,17 +124,25 @@ $disabledColor: #c0c4cc
     left: 37%
     top: 0
 
++r($xl)
+  .ss-item
+    &__title, &__date
+      font-size: 12px
 
 +r($lg)
   .ss-item
     padding-top: 15px
-    padding-left: 112px
+    padding-left: 105px
     padding-bottom: 10px
     width: 100%
+    min-height: 90px
     position: relative
     line-height: 1.2
     &:last-child
       width: 100%
+      position: relative
+      top: 0
+      left: 0
       &:before
         display: none
       &:after
@@ -114,34 +150,24 @@ $disabledColor: #c0c4cc
         width: 6px
         height: calc(100% + 15px)
         top: 0
-        left: 83px
+        left: 86px
         border-radius: 0
     &:after
       content: ''
       width: 6px
       height: calc(100% + 15px)
       top: 0
-      left: 83px
+      left: 86px
       border-radius: 0
     &__ico
-      margin-left: 0
-      width: 60px
+      width: 95px
+      left: -5px
       justify-content: center
+      transform: translateX(0%) scale(0.85)
+      transform-origin: left center
+    &__title, &__date
+      font-size: 14px
     &__status
       top: 17px
-      left: 75px
-      position: relative
-    &:last-child
-      position: relative
-      top: 0
-      left: 0
-    &__status
+      left: 78px
       position: absolute
-
-
-  .ss-item
-    padding-top: 15px
-    padding-left: 105px
-    min-height: 90px
-    &:last-child:after, &:after
-      left: 86px

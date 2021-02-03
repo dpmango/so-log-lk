@@ -188,9 +188,13 @@
     transition: transform .25s $ease, opacity .1s $ease
     a
       min-width: 240px
+    &.is-active
+      opacity: 1
+      pointer-events: all
+      transform: translate3d(0,0,0)
 
   &__mobile-back
-    display: none
+    display: none !important
 
   &__have-ul
     > a::after
@@ -214,6 +218,7 @@
       padding-top: 60px
       padding-bottom: 90px
     &__lvl-down
+      padding-top: 90px
       padding-bottom: 90px
 
 +r($md)
@@ -238,7 +243,7 @@
         padding-right: 15px
 
     &__mobile-back
-      display: block
+      display: block !important
       margin-bottom: 10px
       button
         margin-left: 20px

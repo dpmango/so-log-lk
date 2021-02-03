@@ -8,6 +8,7 @@ $disabledColor: #c0c4cc
   margin-bottom: 50px
   background: #f7f7f7
   position: relative
+  border-radius: 8px
   &:after
     content: ''
     width: 40px
@@ -48,19 +49,29 @@ $disabledColor: #c0c4cc
       display: none
     .supply-step__box
       left: auto
-      right: 55px
+      right: 45px
       color: $disabledColor
     .ss-item:last-child
       &:before, &:after
         display: none
 
 
++r($xl)
+  .supply-step
+    padding-left: 100px
+    &__box
+      left: 20px
+      width: 45px
+      height: 45px
+      .ico
+        font-size: 45px
+    &__last
+      .supply-step__box
+        right: 45px
 
 +r($lg)
-
-
   .supply-step
-    padding: 0 20px
+    padding: 0 10px
     margin-bottom: 0
     background: #f7f7f7
     position: relative
@@ -69,11 +80,8 @@ $disabledColor: #c0c4cc
     &:first-child
       padding-top: 70px
     &:last-child
-      padding-bottom: 60px
+      padding-bottom: 40px
 
-    &__box
-      width: 45px
-      height: 45px
     &__row
       margin: 0 auto
       padding: 0
@@ -83,31 +91,15 @@ $disabledColor: #c0c4cc
       .supply-step__box
         position: absolute
         top: 20px
-        left: 83px
+        left: 75px
     &__last
       .supply-step__box
         position: absolute
         top: auto
         bottom: 20px
-        left: 83px
+        left: 75px
 
     .ss-item:last-child
       padding-bottom: 0
 
-
-    // TODO - overrides again
-    &:last-child
-      padding-bottom: 40px
-
-    &__last
-      .supply-step__box
-        bottom: 0
-        left: -10px
-
-    &__status
-      left: 78px
-
-
-  .supply-step
-    padding: 0 10px
 
