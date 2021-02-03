@@ -16,14 +16,27 @@
       margin-bottom: 30px
       &:last-child
         margin-bottom: 0
-  &__nav
+  &__nav-scroller
     position: relative
-    width: 100%
+    display: flex
+    overflow-x: auto
+    padding: 0 60px 15px calc(92px + 60px)
+    margin-bottom: -15px
+    margin-left: calc(-92px - 60px)
+    margin-right: -60px
+  &__nav
+    flex: 0 0 auto
+    position: relative
+    width: max-content
     display: flex
     align-items: center
     margin: 20px 0 0
-    padding: 0 0 2px
+    padding: 0
     &::after
+      display: inline-block
+      content: ' '
+      width: 60px
+    &::before
       display: inline-block
       content: ' '
       position: absolute
@@ -36,7 +49,8 @@
     li
       flex: 0 0 auto
       display: inline-block
-      margin-right: auto
+      // margin-right: auto
+      margin-right: 25px
       &:last-child
         margin-right: 0
     a
@@ -59,3 +73,8 @@
     height: 2px
     background: $colorPrimary
     transition: all .25s $ease
+
++r($sm)
+  .dash
+    &__nav
+      margin-top: 10px

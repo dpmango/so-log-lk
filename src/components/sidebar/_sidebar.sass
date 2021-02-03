@@ -12,6 +12,11 @@
     background: rgba(#000, .2)
     backdrop-filter: blur(4px)
 
++r($md)
+  .is-mobile-navi-active
+    .sidebar-global-container
+      background: rgba(#000, .2)
+      backdrop-filter: blur(4px)
 
 .sidebar
   position: fixed
@@ -80,10 +85,32 @@
   .sidebar
     &__wrapper
       padding-top: 60px
+      padding-bottom: 90px
 
 +r($md)
   .sidebar
-    transform: translate3d(-92px, 0, 0)
+    transform: translate3d(-62px, 0, 0)
+    transition: transform .25s $ease
+    will-change: transform
+    &__wrapper
+      padding-bottom: 130px
+    &__menu
+      a
+        min-width: 62px
+        padding: 10px 5px
+        text-align: right
+
+  .is-mobile-navi-active
+    .sidebar
+      transform: translate3d(0,0,0)
+
++r($sm)
+  .sidebar
+    &__wrapper
+      padding-top: 42px
+    &__menu
+      margin-top: 10px
+
 
 // sidebar menu (js-sidebar-menu)
 .s-menu
@@ -162,6 +189,9 @@
     a
       min-width: 240px
 
+  &__mobile-back
+    display: none
+
   &__have-ul
     > a::after
       display: inline-block
@@ -182,3 +212,48 @@
   .s-menu
     &__wrapper
       padding-top: 60px
+      padding-bottom: 90px
+    &__lvl-down
+      padding-bottom: 90px
+
++r($md)
+  .s-menu
+    left: 62px
+    background: white
+    transform: translate3d(-62px,0,0)
+    &__wrapper
+      padding-bottom: 130px
+    &__menu
+      a
+        max-width: 100%
+        padding-left: 5px
+    &__lvl-down
+      left: calc(-225px - 62px + 100vw)
+      margin: 0
+      padding: 90px 0 130px
+      background: $colorBg
+      a
+        min-width: 225px
+        padding-left: 20px
+        padding-right: 15px
+
+    &__mobile-back
+      display: block
+      margin-bottom: 10px
+      button
+        margin-left: 20px
+
+  .is-mobile-navi-active
+    .s-menu
+      opacity: 1
+      pointer-events: all
+      transform: translate3d(0,0,0)
+
++r($sm)
+  .s-menu
+    &__wrapper
+      padding-top: 42px
+    &__menu
+      margin-top: 10px
+    &__lvl-down
+      padding-top: 52px

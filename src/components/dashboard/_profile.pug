@@ -10,12 +10,13 @@ include ../profile/_mixins
 
       // tabs content
       .dash__content.js-tabs(data-aos="fade")
-        ul.dash__nav.dash__nav--width-auto.js-tabs-nav
-          i.dash__nav-highlighter.js-nav-highlighter
-          li.is-active
-            a(href="#contacts") Контакты
-          li
-            a(href="#data") Данные
+        .dash__nav-scroller
+          ul.dash__nav.dash__nav--width-auto.js-tabs-nav
+            i.dash__nav-highlighter.js-nav-highlighter
+            li.is-active
+              a(href="#contacts") Контакты
+            li
+              a(href="#data") Данные
 
         // NEXT TAB (TRACKING)
         .js-tab.mt-2(data-tab="contacts" style="display: block")

@@ -10,18 +10,19 @@
 
       // tabs content
       .dash__content.js-tabs
-        ul.dash__nav.js-tabs-nav(data-aos="fade")
-          i.dash__nav-highlighter.js-nav-highlighter
-          li.is-active
-            a(href="#tracking") Трекинг партии поставки
-          li
-            a(href="#info") Информация по поставке
-          li
-            a(href="#bills") Счета по поставке
-          li
-            a(href="#docs") Документы по поставке
-          li
-            a(href="#suppliers") Расчеты с поставщиками
+        .dash__nav-scroller
+          ul.dash__nav.js-tabs-nav(data-aos="fade")
+            i.dash__nav-highlighter.js-nav-highlighter
+            li.is-active
+              a(href="#tracking") Трекинг партии поставки
+            li
+              a(href="#info") Информация по поставке
+            li
+              a(href="#bills") Счета по поставке
+            li
+              a(href="#docs") Документы по поставке
+            li
+              a(href="#suppliers") Расчеты с поставщиками
 
 
         // NEXT TAB (TRACKING)

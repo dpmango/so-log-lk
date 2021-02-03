@@ -39,8 +39,10 @@
 
         if ($(this).is('.is-active')) {
           APP.Plugins.ScrollBlock.disableScroll();
+          $('body').addClass('is-mobile-navi-active');
         } else {
           APP.Plugins.ScrollBlock.enableScroll();
+          $('body').removeClass('is-mobile-navi-active');
         }
       });
     },

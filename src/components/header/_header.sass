@@ -9,6 +9,7 @@
   will-change: transform
   backface-visibility: hidden
   transform-style: preserve-3d
+  transition: box-shadow .25s $ease
   &__wrapper
     display: flex
     align-items: center
@@ -60,7 +61,7 @@
       margin-right: 5px
       margin-left: 5px
     &:last-child::after
-      display: none
+      display: none !important
     a
       display: inline-block
       padding: 5px
@@ -84,24 +85,14 @@
     display: none
     padding-left: 20px
 
-  &.is-fixed
-    // should be normalized to -100% scroll at this point
-    position: fixed
-    // visibility: hidden
-    transform: translate3d(0,-100%,0) !important
-    transition: transform .25s $ease
-    .header__wrapper
-      padding-top: 10px
-      padding-bottom: 10px
-
-  &.is-fixed-visible
-    // visibility: visible
-    transform: translate3d(0,0,0) !important
-
   &.is-transitioning
     transition: transform .25s $ease
     transform: translate3d(0,-100%,0) !important
 
+// body class
+.is-mobile-navi-active
+  .header
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.07)
 
 +r($lg)
   .header
@@ -111,16 +102,27 @@
       .ico
         font-size: 32px
     &__contact
-      &--desktop
-        display: none
       &::after
         display: none
       span
         display: none
+      &--desktop
+        display: none
+      &--navi
+        display: block
+        align-items: flex-start
+        span
+          display: inline-block
     &__contact-icon
       display: inline-block
     &__action
       display: none
+      &--navi
+        display: flex
+        margin-left: 0
+        margin-right: 25px
+        &:last-child
+          margin-right: 0
     &__hamburger
       display: block
 
