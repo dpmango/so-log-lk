@@ -57,21 +57,31 @@ textarea.ui-input
   &__wrapper
     position: relative
     size: 26px 22px
+    font-size: 0
     .ico
       position: absolute
       font-size: 22px
-      transition: color .25s $ease
+      transition: color .25s $ease, opacity .25s $ease
     .ico-mono-eye-closed
       color: #ABABAB
     .ico-mono-eye-opened
       color: $fontColor
       opacity: 0
+      font-size: 20px
+      transform: translateY(1px)
   &:hover
     .ui-pass-eye__wrapper
       .ico-mono-eye-closed
         color: $fontColor
       .ico-mono
         color: #ABABAB
+  &.is-active
+    .ui-pass-eye__wrapper
+      .ico-mono-eye-closed
+        opacity: 0
+      .ico-mono-eye-opened
+        opacity: 1
+
 
 
 // ui-dynamic-input
