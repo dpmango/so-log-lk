@@ -5,7 +5,9 @@ include ../supply/_mixins
     .dash__wrapper
       // head
       .dash__head(data-aos="fade")
-        .h1-title Текущие поставки
+        .h1-title.dash__head-title Текущие поставки
+        .dash__head-link
+          a(href="#").dashed-link Завершенные поставки
       .dash__filter.row(data-aos="fade")
         .col.col-3.col-xl-5.col-md-12
           .ui-group

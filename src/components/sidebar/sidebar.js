@@ -23,6 +23,8 @@
       this.data.container = $container;
       this.data.nav = $nav;
       this.data.menu = $menu;
+
+      this.clearAll();
     },
     eventListeners: function () {
       let _this = this;
@@ -112,13 +114,24 @@
 
         // cleanup when hovered out global container
         .on('mouseleave', '.sidebar-global-container', function () {
-          _this.data.container.removeClass('is-lvl-down-active');
-          _this.data.menu.removeClass('is-active');
-          _this.data.container.removeClass('is-active');
-          _this.data.nav.find('li').removeClass('is-hovered');
-          _this.data.menu.find('li').removeClass('is-active');
-          _this.data.menu.find('ul ul').removeClass('force-hide');
+          _this.clearAll();
+        })
+        .on('click', function (e) {
+          const notSidebar = $(e.target).closest('.sidebar-global-container').length === 0;
+          const notHeader = $(e.target).closest('.header').length === 0;
+          if (notSidebar && notHeader) {
+            _this.clearAll();
+            $('.js-hamburger').click();
+          }
         });
+    },
+    clearAll: function () {
+      this.data.container.removeClass('is-lvl-down-active');
+      this.data.menu.removeClass('is-active');
+      this.data.container.removeClass('is-active');
+      this.data.nav.find('li').removeClass('is-hovered');
+      this.data.menu.find('li').removeClass('is-active');
+      this.data.menu.find('ul ul').removeClass('force-hide');
     },
     // setPositions: function() {
     //   // position for 3rd level menu (__lvl-down)
