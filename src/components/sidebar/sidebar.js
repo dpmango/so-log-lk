@@ -47,7 +47,8 @@
           let $container = _this.data.container;
           let $nav = _this.data.nav;
           let $menu = _this.data.menu;
-          let dataIndex = $link.parent().data('index');
+          let $menu2 = $link.parent('li').find('ul');
+          let dataIndex = $link.parent('li').data('index');
 
           if (dataIndex) {
             // trigger only for first level menu (ul)
@@ -56,10 +57,14 @@
             $container.addClass('is-active');
 
             // light up both nav and menu by index (reverse)
+            $container.removeClass('is-lvl-down-active');
             $nav.find('li').removeClass('is-hovered');
             $nav.find('li[data-index="' + dataIndex + '"]').addClass('is-hovered');
             $menu.find('li').removeClass('is-active'); // siblings of active (menu)
             $link.parent('li').addClass('is-active'); // cur.active (menu)
+            if ($menu2.length > 0) {
+              _this.data.container.addClass('is-lvl-down-active');
+            }
           }
         })
 
@@ -85,7 +90,8 @@
         )
 
         // keep parents active when lvl-down (2 ul) is hovered
-        .on('mouseenter', '.js-sidebar-menu .s-menu__lvl-down a', function () {
+        .on('mouseenter', '.js-sidebar-menu .s-menu__lvl-down a', function (e) {
+          e.stopPropagation();
           let $link = $(this);
           let $menu = _this.data.menu;
           let dataIndex = $link.closest('ul').closest('ul').data('index');
@@ -99,12 +105,14 @@
           let $back = $(this);
 
           $back.closest('ul').removeClass('is-active').addClass('force-hide');
+          _this.data.container.removeClass('is-lvl-down-active');
           _this.data.nav.find('li').removeClass('is-hovered');
           _this.data.menu.find('li').removeClass('is-active');
         })
 
         // cleanup when hovered out global container
         .on('mouseleave', '.sidebar-global-container', function () {
+          _this.data.container.removeClass('is-lvl-down-active');
           _this.data.menu.removeClass('is-active');
           _this.data.container.removeClass('is-active');
           _this.data.nav.find('li').removeClass('is-hovered');
