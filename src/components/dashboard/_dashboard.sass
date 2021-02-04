@@ -96,6 +96,13 @@
       max-width: 400px
       .btn
         margin-top: 0
+    &__nav-scroller
+      padding: 0 30px 15px 30px
+      margin-left: -30px
+      margin-right: -30px
+      &.has-scrollbar
+        .dash__nav::after
+          width: 30px
 
 +r($sm)
   .dash
@@ -104,3 +111,10 @@
     &__supply
       .supply-scope
         margin-bottom: 20px
+    &__nav-scroller
+      padding: 0 20px 15px 20px
+      margin-left: -20px
+      margin-right: -20px
+      &.has-scrollbar
+        .dash__nav::after
+          width: 20px
