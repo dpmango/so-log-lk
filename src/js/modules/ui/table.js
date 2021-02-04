@@ -5,11 +5,10 @@
   APP.Plugins.Table = {
     init: function (fromPjax) {
       if (!fromPjax) {
-        this.checkScrollbars();
-
         this.eventListeners();
         this.listenResize();
       }
+      this.checkScrollbars();
     },
 
     eventListeners: function () {},
