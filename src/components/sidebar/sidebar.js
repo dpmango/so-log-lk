@@ -73,7 +73,8 @@
               let $menu = _this.data.menu;
               let $menu2 = $link.parent('li').find('ul');
 
-              $menu.find('li > ul').removeClass('is-active');
+              let $allLvlDowns = $menu.find('li > ul');
+              $allLvlDowns.removeClass('is-active').removeClass('force-hide');
               if ($menu2.length > 0) {
                 $menu2.addClass('is-active');
               }
@@ -93,12 +94,22 @@
           $activeMenuLi.mouseenter();
         })
 
+        // mobile back menu from lvl down
+        .on('click', '.s-menu__mobile-back', function () {
+          let $back = $(this);
+
+          $back.closest('ul').removeClass('is-active').addClass('force-hide');
+          _this.data.nav.find('li').removeClass('is-hovered');
+          _this.data.menu.find('li').removeClass('is-active');
+        })
+
         // cleanup when hovered out global container
         .on('mouseleave', '.sidebar-global-container', function () {
           _this.data.menu.removeClass('is-active');
           _this.data.container.removeClass('is-active');
           _this.data.nav.find('li').removeClass('is-hovered');
           _this.data.menu.find('li').removeClass('is-active');
+          _this.data.menu.find('ul ul').removeClass('force-hide');
         });
     },
     // setPositions: function() {

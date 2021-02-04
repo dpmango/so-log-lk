@@ -15,6 +15,9 @@
       $datepicker.each(function (i, picker) {
         let $picker = $(picker);
 
+        // prevent native calendar on mobile
+        $picker.attr('type', 'text');
+
         $picker.datepicker({
           language: 'ru',
           inline: false,

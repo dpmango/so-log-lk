@@ -34,7 +34,9 @@
 
       if (APP.Browser().data.isMobile) {
         // which elements are scrollable when scroll is locked?
-        let $blockers = $('.blocker, .mobile-menu__scroller, .modal__overlay');
+        let $blockers = $(
+          '.blocker, .mobile-menu__scroller, .modal__overlay, .sidebar, .s-menu__lvl-down'
+        );
 
         if ($blockers.length > 0) {
           $blockers.each(function (i, el) {
