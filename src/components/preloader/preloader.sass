@@ -16,11 +16,19 @@
     backface-visibility: hidden
     img, svg
       max-width: 100%
+      animation: preloaderSpin 1.5s both $ease
 
 // barba wrapper
 .is-preloaded
   .preloader
     opacity: 0
     pointer-events: none
-  .preloader__image
-    transform: scale(2)
+  // .preloader__image
+  //   transform: scale(2)
+
+
+@keyframes preloaderSpin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
