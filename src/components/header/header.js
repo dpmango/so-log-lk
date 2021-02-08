@@ -36,6 +36,7 @@
       $('.js-hamburger').removeClass('is-active');
       $('.mobile-navi').removeClass('is-active');
       APP.Plugins.ScrollBlock.enableScroll();
+      $('body').removeClass('is-mobile-navi-active');
     },
     hamburgerClickListener: function () {
       _document.on('click', '.js-hamburger', function () {
