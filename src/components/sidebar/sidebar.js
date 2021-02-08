@@ -121,7 +121,7 @@
           const notHeader = $(e.target).closest('.header').length === 0;
           if (notSidebar && notHeader) {
             _this.clearAll();
-            $('.js-hamburger').click();
+            APP.Components.Header.hideMobileNavi();
           }
         });
     },

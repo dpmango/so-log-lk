@@ -173,6 +173,15 @@ p + p
   &--w1000
     .table
       min-width: 1000px
+  &::-webkit-scrollbar
+    -webkit-appearance: none
+    width: 7px
+    height: 5px
+  &::-webkit-scrollbar-thumb
+    border-radius: 4px
+    background-color: rgba(0, 0, 0, .4)
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5)
+
 +r($sm)
   .table-scroller
     margin-left: -20px
@@ -209,6 +218,19 @@ p + p
       width: 65px
     &.tcol-date
       width: 125px
+  tbody
+    td[rowspan]
+      vertical-align: top
+
+  &__caption-wrapper
+    width: 100%
+    display: inline-flex
+    flex-wrap: wrap
+  &__caption-main
+    padding-right: 20px
+  &__caption-cta
+    display: inline-block
+    margin-left: auto
 
 +r($lg)
   .table
@@ -294,6 +316,13 @@ p + p
         font-size: 14px
     tbody
 
+
+.table--docs
+  tbody
+    td
+      padding-top: 4px
+      padding-bottom: 4px
+      min-height: 40px
 
 // table-file
 .table-file

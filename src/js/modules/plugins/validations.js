@@ -81,7 +81,7 @@
             )
           );
         },
-        'Email format must be like name@site.com'
+        'Неверный формат email'
       );
     },
     localize: function () {
@@ -136,11 +136,11 @@
           },
           messages: {
             email: {
-              required: 'Please enter email',
-              email: 'Email format must be like name@site.com',
+              required: 'Пожалуйста введите email',
+              email: 'Неверный формат email',
             },
             phone: {
-              minlength: 'Phome form is invalid',
+              minlength: 'Неверный формат телефона',
             },
           },
         };

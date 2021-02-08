@@ -7,7 +7,7 @@
   font-family: $systemFont
   font-size: 16px
   color: $fontColor
-  border: 1px solid $borderColor
+  border: 1.5px solid $borderColor
   border-radius: 0px
   padding: 15px 15px
   transition: background
@@ -177,3 +177,21 @@ input[type="date"]
     display: none
     -webkit-appearance: none
 
+input
+  // hide decorations
+  &::-webkit-contacts-auto-fill-button,
+  &::-webkit-credentials-auto-fill-button,
+  &::-webkit-caps-lock-indicator,
+  &::-webkit-textfield-decoration-container,
+  &::-ms-clear,
+  &::-ms-reveal
+
+input::-webkit-credentials-auto-fill-button
+  visibility: hidden
+  display: none !important
+  pointer-events: none
+  position: absolute
+  right: 0
+  width: 0.1px
+  height: 0.1px
+  opacity: 0

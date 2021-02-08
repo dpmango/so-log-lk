@@ -10,17 +10,28 @@
     padding-right: 20px
   &__head-cta
     margin: 10px 0 10px auto
+    .btn
+      padding-left: 15px
+      padding-right: 15px
   &__head-link
     margin-left: 20px
     align-self: flex-end
     a
-      padding-bottom: 5px
-      padding-top: 5px
+      // padding-bottom: 5px
+      // padding-top: 5px
+      margin-bottom: 5px
   &__filter
     margin-top: 20px
     margin-bottom: 20px
     .ui-group
       margin-bottom: 10px
+      padding-right: 20px
+    .col
+      .ui-group
+        padding-right: 20px
+      &:last-child
+        .ui-group
+          padding-right: 0
   &__supply
     .supply-scope
       margin-bottom: 30px
@@ -62,9 +73,11 @@
       flex: 0 0 auto
       display: inline-block
       // margin-right: auto
-      margin-right: 25px
+      margin-right: 62px
       &:last-child
         margin-right: 0
+      &:first-of-type
+        margin-left: -5px
     a
       position: relative
       display: inline-block
@@ -106,6 +119,9 @@
       max-width: 400px
       .btn
         margin-top: 0
+      .col
+        .ui-group
+          padding-right: 0px
     &__nav-scroller
       padding: 0 30px 15px 30px
       margin-left: -30px
@@ -113,6 +129,9 @@
       &.has-scrollbar
         .dash__nav::after
           width: 30px
+    &__nav
+      li
+        margin-right: 25px
 
 +r($sm)
   .dash

@@ -1,10 +1,10 @@
 
 // .supply-details
 .supply-details.panel
-  .supply-details__info(data-aos="fade")
+  .supply-details__info.supply-details__info--mb-n(data-aos="fade")
     .wysiwyg.tac
       p <span class="c-primary">ВНИМАНИЕ:</span> Каждый товар должен иметь на ИНДИВИДУАЛЬНОЙ упаковке маркировку, содержащую сведения об изготовителе, <br/> торговой марке, модели/артикуле, получателе и т.д.
-      blockquote Товар подлежит подлежит сертификации или ДС, обязательно наличие маркировки ЕАС. Требуется представление разрешительной документации!
+      blockquote Товар подлежит сертификации или ДС, обязательно наличие маркировки ЕАС. Требуется представление разрешительной документации!
     .wysiwyg.mt-2
       h3 Список товара, на который требуется разрешительная документация:
 
@@ -75,7 +75,10 @@
       //- h3 Услуги и стоимость
       .table-scroller.table-scroller--w800
         table.table.table--financial(data-aos="fade")
-          caption Услуги и стоимость
+          caption
+            .table__caption-wrapper
+              span.table__caption-main Услуги и стоимость
+              span.table__caption-cta Срок действия КП: <span class="c-primary">13.11.2020</span>
           thead
             tr
               td.tac(rowspan="2") №
@@ -147,21 +150,24 @@
               td.tac 0.00
               td.tac 13 000.00
               td.tac 1 230.45
-              td.tac 13 000.00
+              td.tac
+                strong 13 000.00
             tr
-              td.tac 2
+              td.tac.num-col 2
               td Брокер
               td.tac 0.00
               td.tac 28 000.00
               td.tac 0.00
-              td.tac 28 000.00
+              td.tac
+                strong 28 000.00
             tr
               td.tac.num-col 3
               td Таможенные пошлины
               td.tac 0.00
               td.tac 38 000.00
               td.tac 0.00
-              td.tac 38 000.00
+              td.tac
+                strong 38 000.00
 
       // table
       .table-scroller.table-scroller--w450
