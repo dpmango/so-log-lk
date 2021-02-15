@@ -5,7 +5,9 @@
       let displayCondition =
         wHost.indexOf('localhost') >= 0 ||
         wHost.indexOf('surge') >= 0 ||
+        wHost.indexOf('30') >= 0 ||
         wHost.indexOf('netlify') >= 0;
+
       if (displayCondition) {
         let wWidth = window.innerWidth;
         let wHeight = _window.height();
